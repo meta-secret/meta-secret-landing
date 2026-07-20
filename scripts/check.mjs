@@ -6,7 +6,7 @@ const cryptoPlate = readFileSync('assets/crypto-plate.svg', 'utf8');
 const analyticsId = 'G-LSB54PR33J';
 const requiredText = [
   'Privacy has',
-  'Privacy has no login or master password.',
+  'Privacy has no login, master password, central authority, paid subscription, internet dependency, or third party trust.',
   'Tools for secrets that remain yours—even when platforms disappear.',
   'Launch id0',
   'Open Nook',
@@ -57,7 +57,19 @@ if (!html.includes('<main id="main">') || !html.includes('<h1')) {
   throw new Error('Document landmarks or primary heading are missing.');
 }
 
-if (!html.includes('data-privacy-term>login</span>') || !readFileSync('script.js', 'utf8').includes("['login', 'master password']")) {
+const privacyTerms = [
+  'login',
+  'master password',
+  'central authority',
+  'paid subscription',
+  'internet dependency',
+  'third party trust',
+];
+const script = readFileSync('script.js', 'utf8');
+if (
+  !html.includes('data-privacy-term>login</span>') ||
+  privacyTerms.some((term) => !script.includes(`'${term}'`))
+) {
   throw new Error('The rotating privacy headline is missing one of its required states.');
 }
 
