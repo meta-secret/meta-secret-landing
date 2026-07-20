@@ -19,7 +19,7 @@ const requiredText = [
   'https://id0.app',
   'Open nokey.sh',
   'https://nokey.sh',
-  'assets/crypto-plate.svg?v=corrected-ecc',
+  'assets/crypto-plate.svg?v=formulas-visible',
   'https://simple.nokey.sh',
   'https://sentinel.nokey.sh',
   'https://github.com/meta-secret/meta-secret-core',

@@ -7,6 +7,7 @@
       text{fill:#101112;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}.tiny{font-size:9px;fill:#74746f}.small{font-size:10px}.label{font-size:13px;font-weight:700}.axis,.curve,.ecc-curve{fill:none;stroke:#101112;stroke-width:1.4}.guide{fill:none;stroke:#9d9d98;stroke-width:1;stroke-dasharray:5 5}.secant{fill:none;stroke:#74746f;stroke-width:1.15;stroke-dasharray:5 5}.reflection{fill:none;stroke:#244cff;stroke-width:1.15;stroke-dasharray:3 3}.grid{fill:#858681}.selected{fill:#244cff;stroke:#101112;stroke-width:1}.open{fill:#f4f3ef;stroke:#101112;stroke-width:1.4}.solid{fill:#101112}.paper{fill:#f4f3ef;stroke:#101112;stroke-width:1.2}.hash{font-size:9px;fill:#4f504d}.light{fill:#f4f3ef}.box{fill:#f4f3ef;stroke:#101112;stroke-width:1.15}
     </style>
   </defs>
+  <g transform="translate(0 22)">
   <text x="30" y="35" class="label">t = 3 / n = 5</text><text x="168" y="35">|</text><text x="190" y="35">GF(p)</text>
   <text x="30" y="58" class="tiny">p = FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF</text>
   <path class="axis" d="M40 330V90M40 330H520" marker-end="url(#arrow)"/><text x="52" y="104">f(x)</text><text x="530" y="330">x</text>
@@ -48,5 +49,6 @@
     <g transform="translate(0 121)"><rect class="solid" width="78" height="31"/><text class="light" x="39" y="21" text-anchor="middle">H_1</text><path class="guide" d="M84 16h75"/><text x="168" y="20" class="small">C8D5_1F90_A3B2_E6C4</text></g>
     <g transform="translate(0 169)"><rect class="solid" width="78" height="31"/><text class="light" x="39" y="21" text-anchor="middle">H_0</text><path class="guide" d="M84 16h75"/><text x="168" y="20" class="small">B1E4_9A7C_3D21_F6E0</text></g>
     <text x="0" y="229" class="small">H_0  →  H_1  →  H_2  →  ROOT</text>
+  </g>
   </g>
 </svg>
