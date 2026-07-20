@@ -90,7 +90,14 @@ document.querySelectorAll('[data-year]').forEach((element) => {
 });
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const privacyTerms = ['login', 'master password'];
+const privacyTerms = [
+  'login',
+  'master password',
+  'central authority',
+  'paid subscription',
+  'internet dependency',
+  'third party trust',
+];
 
 if (privacyTerm && !reducedMotion) {
   const typeMs = 58;
