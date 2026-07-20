@@ -3415,3 +3415,35 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
     width: min(82%, 840px);
   }
 }
+
+/* The changing trust model stays in a fixed slot, so neither phrase moves the
+   hero or the cryptographic plate when it rotates. */
+.hero h1 .privacy-slot {
+  position: relative;
+  height: clamp(58px, 6vw, 92px);
+  overflow: hidden;
+}
+
+.hero h1 .privacy-term {
+  position: absolute;
+  inset: 0 auto auto 0;
+  font-size: clamp(42px, 4.2vw, 76px);
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.hero h1 .privacy-term.is-changing {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(0.18em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .privacy-term {
+    transition: none;
+  }
+}

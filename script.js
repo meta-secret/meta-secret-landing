@@ -6,6 +6,7 @@ const themeButton = document.querySelector('.theme-toggle');
 const themeLabel = document.querySelector('[data-theme-label]');
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+const privacyTerm = document.querySelector('[data-privacy-term]');
 
 const ctaVariants = ['proof', 'shard', 'zk', 'zk'];
 const ctaStatus = {
@@ -89,6 +90,22 @@ document.querySelectorAll('[data-year]').forEach((element) => {
 });
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const privacyTerms = ['login', 'master password'];
+let privacyTermIndex = 0;
+
+if (privacyTerm && !reducedMotion) {
+  window.setInterval(() => {
+    if (document.hidden) return;
+
+    privacyTerm.classList.add('is-changing');
+    window.setTimeout(() => {
+      privacyTermIndex = (privacyTermIndex + 1) % privacyTerms.length;
+      privacyTerm.textContent = privacyTerms[privacyTermIndex];
+      privacyTerm.classList.remove('is-changing');
+    }, 180);
+  }, 4000);
+}
+
 if (reducedMotion || !('IntersectionObserver' in window)) {
   document.querySelectorAll('.reveal').forEach((element) => element.classList.add('visible'));
 } else {

@@ -6,7 +6,7 @@ const cryptoPlate = readFileSync('assets/crypto-plate.svg', 'utf8');
 const analyticsId = 'G-LSB54PR33J';
 const requiredText = [
   'Privacy has',
-  'no master key.',
+  'Privacy has no login or master password.',
   'Tools for secrets that remain yours—even when platforms disappear.',
   'Launch id0',
   'Open Nook',
@@ -53,8 +53,12 @@ for (const match of html.matchAll(/href="#([^"]+)"/g)) {
   if (!ids.has(match[1])) throw new Error(`Anchor has no matching id: #${match[1]}`);
 }
 
-if (!html.includes('<main id="main">') || !html.includes('<h1>')) {
+if (!html.includes('<main id="main">') || !html.includes('<h1')) {
   throw new Error('Document landmarks or primary heading are missing.');
+}
+
+if (!html.includes('data-privacy-term>login</span>') || !readFileSync('script.js', 'utf8').includes("['login', 'master password']")) {
+  throw new Error('The rotating privacy headline is missing one of its required states.');
 }
 
 if (!html.includes('<div class="vision-heading">') || !readFileSync('styles.css', 'utf8').includes('.vision-heading h2')) {
