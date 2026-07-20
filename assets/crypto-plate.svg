@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 650" role="img" aria-labelledby="title desc">
+  <title id="title">Threshold cryptography, elliptic curve addition, and Merkle proof</title>
+  <desc id="desc">Five Shamir shares on a finite-field curve, elliptic curve point addition, and a Merkle proof for the third share.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 8 4 0 8z" fill="#101112"/></marker>
+    <style>
+      text{fill:#101112;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}.tiny{font-size:9px;fill:#74746f}.small{font-size:10px}.label{font-size:13px;font-weight:700}.axis,.curve,.ecc-curve{fill:none;stroke:#101112;stroke-width:1.4}.guide{fill:none;stroke:#9d9d98;stroke-width:1;stroke-dasharray:5 5}.grid{fill:#858681}.selected{fill:#244cff;stroke:#101112;stroke-width:1}.open{fill:#f4f3ef;stroke:#101112;stroke-width:1.4}.solid{fill:#101112}.paper{fill:#f4f3ef;stroke:#101112;stroke-width:1.2}.hash{font-size:9px;fill:#4f504d}.light{fill:#f4f3ef}.box{fill:#f4f3ef;stroke:#101112;stroke-width:1.15}
+    </style>
+  </defs>
+  <text x="30" y="35" class="label">t = 3 / n = 5</text><text x="168" y="35">|</text><text x="190" y="35">GF(p)</text>
+  <text x="30" y="58" class="tiny">p = FFFFFFFF00000001000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF</text>
+  <path class="axis" d="M40 330V90M40 330H520" marker-end="url(#arrow)"/><text x="52" y="104">f(x)</text><text x="530" y="330">x</text>
+  <g opacity=".8">
+    <circle class="grid" cx="100" cy="130" r="2.3"/><circle class="grid" cx="165" cy="130" r="2.3"/><circle class="grid" cx="230" cy="130" r="2.3"/><circle class="grid" cx="295" cy="130" r="2.3"/><circle class="grid" cx="360" cy="130" r="2.3"/><circle class="grid" cx="425" cy="130" r="2.3"/>
+    <circle class="grid" cx="100" cy="175" r="2.3"/><circle class="grid" cx="165" cy="175" r="2.3"/><circle class="grid" cx="230" cy="175" r="2.3"/><circle class="grid" cx="295" cy="175" r="2.3"/><circle class="grid" cx="360" cy="175" r="2.3"/><circle class="grid" cx="425" cy="175" r="2.3"/>
+    <circle class="grid" cx="100" cy="220" r="2.3"/><circle class="grid" cx="165" cy="220" r="2.3"/><circle class="grid" cx="230" cy="220" r="2.3"/><circle class="grid" cx="295" cy="220" r="2.3"/><circle class="grid" cx="360" cy="220" r="2.3"/><circle class="grid" cx="425" cy="220" r="2.3"/>
+    <circle class="grid" cx="100" cy="265" r="2.3"/><circle class="grid" cx="165" cy="265" r="2.3"/><circle class="grid" cx="230" cy="265" r="2.3"/><circle class="grid" cx="295" cy="265" r="2.3"/><circle class="grid" cx="360" cy="265" r="2.3"/><circle class="grid" cx="425" cy="265" r="2.3"/>
+  </g>
+  <path class="curve" d="M62 312C108 273 148 270 195 263S272 263 316 244S382 212 424 167S468 121 500 108"/>
+  <g><path class="guide" d="M100 281V390M230 258V390M360 224V390M425 166V390M500 111V390"/>
+    <circle class="open" cx="100" cy="281" r="5"/><circle class="selected" cx="230" cy="258" r="5.5"/><circle class="selected" cx="360" cy="224" r="5.5"/><circle class="open" cx="425" cy="166" r="5"/><circle class="selected" cx="500" cy="111" r="5.5"/>
+  </g>
+  <text x="83" y="349">1</text><text x="213" y="349">2</text><text x="343" y="349">3</text><text x="408" y="349">4</text><text x="483" y="349">5</text>
+  <g transform="translate(75 390)"><path class="solid" d="M25 0 50 17 43 50H7L0 17z"/><text class="light" x="25" y="31" text-anchor="middle">S1</text><text class="hash" x="25" y="66" text-anchor="middle">A1F2</text><text class="hash" x="25" y="79" text-anchor="middle">9C3B</text></g>
+  <g transform="translate(205 390)"><path class="paper" d="M25 0 50 17 43 50H7L0 17z"/><text x="25" y="31" text-anchor="middle">S2</text><text class="hash" x="25" y="66" text-anchor="middle">7B8E</text><text class="hash" x="25" y="79" text-anchor="middle">2D91</text></g>
+  <g transform="translate(335 390)"><path class="solid" d="M25 0 50 17 43 50H7L0 17z"/><text class="light" x="25" y="31" text-anchor="middle">S3</text><text class="hash" x="25" y="66" text-anchor="middle">D4C7</text><text class="hash" x="25" y="79" text-anchor="middle">E6A1</text></g>
+  <g transform="translate(400 390)"><path class="paper" d="M25 0 50 17 43 50H7L0 17z"/><text x="25" y="31" text-anchor="middle">S4</text><text class="hash" x="25" y="66" text-anchor="middle">9F02</text><text class="hash" x="25" y="79" text-anchor="middle">B7D3</text></g>
+  <g transform="translate(475 390)"><path class="solid" d="M25 0 50 17 43 50H7L0 17z"/><text class="light" x="25" y="31" text-anchor="middle">S5</text><text class="hash" x="25" y="66" text-anchor="middle">3C6A</text><text class="hash" x="25" y="79" text-anchor="middle">F1E0</text></g>
+  <path class="guide" d="M100 470v25h260M360 470v25M500 470v25H360M360 495v25" marker-end="url(#arrow)"/>
+  <circle class="solid" cx="360" cy="547" r="20"/><text x="395" y="542">RECONSTRUCT SECRET</text><text x="330" y="582">7A2F_4D6C_E91B_8F3A</text>
+  <circle class="solid" cx="40" cy="575" r="5"/><text x="55" y="579" class="tiny">SELECTED SHARD</text><circle class="open" cx="40" cy="596" r="5"/><text x="55" y="600" class="tiny">UNSELECTED SHARD</text>
+  <g transform="translate(575 22)">
+    <text x="15" y="14" class="label">E(GF(p))</text><path class="axis" d="M0 150H315M150 280V10" marker-end="url(#arrow)"/>
+    <path class="ecc-curve" d="M35 184C83 118 128 105 164 130C197 153 186 205 158 243M177 123C210 75 249 55 282 47M177 174C210 225 246 243 282 250"/>
+    <path class="guide" d="M40 185 244 64M205 76v168M244 64v186"/>
+    <circle class="solid" cx="40" cy="185" r="5.5"/><circle class="solid" cx="205" cy="87" r="5.5"/><circle class="selected" cx="244" cy="64" r="6.5"/>
+    <text x="26" y="215" font-style="italic">P</text><text x="198" y="66">Q</text><text x="260" y="73" class="label">P + Q</text>
+    <text x="10" y="310" class="label">P + Q = R</text><text x="10" y="333" class="tiny">R = 7C91_EA32_BF77_D2E1</text>
+  </g>
+  <g transform="translate(600 390)">
+    <text x="0" y="0" class="label">MERKLE PROOF (S3)</text>
+    <g transform="translate(0 25)"><rect class="box" width="78" height="31"/><text x="39" y="21" text-anchor="middle">ROOT</text><path class="guide" d="M84 16h75"/><text x="168" y="20" class="small">E3F7_2D9A_5BC1_8F44</text></g>
+    <g transform="translate(0 73)"><rect class="box" width="78" height="31"/><text x="39" y="21" text-anchor="middle">H_2</text><path class="guide" d="M84 16h75"/><text x="168" y="20" class="small">D4A8_6C11_9E07_2B5F</text></g>
+    <g transform="translate(0 121)"><rect class="solid" width="78" height="31"/><text class="light" x="39" y="21" text-anchor="middle">H_1</text><path class="guide" d="M84 16h75"/><text x="168" y="20" class="small">C8D5_1F90_A3B2_E6C4</text></g>
+    <g transform="translate(0 169)"><rect class="solid" width="78" height="31"/><text class="light" x="39" y="21" text-anchor="middle">H_0</text><path class="guide" d="M84 16h75"/><text x="168" y="20" class="small">B1E4_9A7C_3D21_F6E0</text></g>
+    <text x="0" y="229" class="small">H_0  →  H_1  →  H_2  →  ROOT</text>
+  </g>
+</svg>

@@ -6,7 +6,7 @@ const analyticsId = 'G-LSB54PR33J';
 const requiredText = [
   'Privacy has',
   'no master key.',
-  'Open tools for secrets that remain yours.',
+  'Tools for secrets that remain yours—even when platforms disappear.',
   'Secrets belong to people,',
   'Keys, not accounts',
   'https://id0.app',
@@ -21,7 +21,7 @@ for (const text of requiredText) {
   if (!html.includes(text)) throw new Error(`Required content is missing: ${text}`);
 }
 
-for (const asset of ['styles.css', 'script.js', 'assets/favicon.svg', 'assets/og-card.svg', '404.html', 'robots.txt', 'sitemap.xml']) {
+for (const asset of ['styles.css', 'script.js', 'assets/crypto-plate.svg', 'assets/favicon.svg', 'assets/og-card.svg', '404.html', 'robots.txt', 'sitemap.xml']) {
   if (!existsSync(asset)) throw new Error(`Required asset is missing: ${asset}`);
 }
 

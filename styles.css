@@ -1640,3 +1640,440 @@ html[data-theme="dark"] .theme-glyph::after {
     transform: none;
   }
 }
+
+/* Minimal editorial direction: open composition, reference-faithful crypto plate. */
+.site-header {
+  height: 78px;
+  padding: 0 3vw;
+  border-bottom: 0;
+}
+
+.site-header.scrolled + main {
+  padding-top: 78px;
+}
+
+.brand {
+  gap: 14px;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+
+.brand-mark {
+  width: 27px;
+  height: 20px;
+}
+
+.hero {
+  min-height: calc(100svh - 78px);
+  grid-template-columns: minmax(360px, 0.72fr) minmax(650px, 1.45fr);
+  gap: clamp(24px, 3vw, 60px);
+  padding: 0 3vw 20px;
+  border-bottom: 0;
+}
+
+.hero-copy {
+  justify-content: center;
+  padding: 40px 0 26px;
+}
+
+.micro-label {
+  margin-bottom: 28px;
+  color: var(--cobalt);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+}
+
+.hero h1 {
+  max-width: 620px;
+  font-family: var(--sans);
+  font-size: clamp(68px, 6.5vw, 112px);
+  font-weight: 400;
+  letter-spacing: -0.068em;
+  line-height: 0.89;
+  text-transform: none;
+}
+
+.hero h1 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-lead {
+  max-width: 430px;
+  margin-top: 30px;
+  color: var(--secondary);
+  font-size: clamp(13px, 1vw, 16px);
+}
+
+.circle-link {
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.circle-arrow {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+}
+
+.trust-line {
+  color: var(--muted);
+}
+
+.crypto-stage {
+  min-height: 650px;
+  overflow: visible;
+  border-left: 0;
+  background: radial-gradient(ellipse at 52% 47%, rgba(36, 76, 255, 0.1), transparent 63%);
+}
+
+.crypto-stage > :not(.crypto-plate-art) {
+  display: none;
+}
+
+.crypto-plate-art {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(100%, 1040px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  transition: filter 220ms ease;
+}
+
+html[data-theme="dark"] .crypto-plate-art {
+  filter: invert(1) hue-rotate(180deg) brightness(0.96);
+}
+
+.index-bar {
+  height: 92px;
+  grid-template-columns: 200px 1fr 1fr auto;
+  gap: 30px;
+  margin: 0 3vw;
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+}
+
+.index-bar a,
+.scroll-label {
+  padding: 0;
+}
+
+.index-bar a:nth-child(2),
+.index-bar a:nth-child(3) {
+  font-family: var(--sans);
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  border-bottom: 0;
+}
+
+.work-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 7vw, 120px);
+  padding: 42px 3vw clamp(90px, 10vw, 155px);
+  background: none;
+}
+
+.project-module,
+.project-module:hover {
+  min-height: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+  background: transparent;
+}
+
+.module-header {
+  height: auto;
+  padding: 16px 0;
+  border-bottom: 0;
+}
+
+.module-header span:nth-child(2) {
+  display: none;
+}
+
+.module-body {
+  min-height: 0;
+  grid-template-columns: 58px minmax(0, 1fr) 44px;
+  padding: 18px 0 0;
+}
+
+.module-index {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  padding-top: 12px;
+  font-family: var(--sans);
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.module-title,
+.module-specs,
+.protocol-trace,
+.module-link {
+  border-left: 0;
+}
+
+.module-title {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 12px 30px 0;
+}
+
+.module-title h2 {
+  font-family: var(--sans);
+  font-size: clamp(58px, 5vw, 82px);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  text-transform: none;
+}
+
+.module-specs {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 8px 12px 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.module-specs div {
+  grid-template-columns: 82px 1fr;
+  padding: 8px 0;
+}
+
+.protocol-trace {
+  grid-column: 2;
+  grid-row: 3;
+  padding: 15px 12px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.module-link {
+  grid-column: 3;
+  grid-row: 1;
+  width: 38px;
+  height: 38px;
+  align-self: start;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.module-link span {
+  display: none;
+}
+
+.panel {
+  padding: clamp(90px, 11vw, 170px) 5vw;
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+}
+
+.manifesto,
+.vision {
+  grid-template-columns: 16% minmax(0, 1.5fr) minmax(240px, 0.65fr);
+}
+
+.manifesto h2,
+.principles-heading h2,
+.product-title h2,
+.vision h2,
+.closing h2 {
+  font-family: var(--sans);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  text-transform: none;
+}
+
+.principles {
+  background: var(--paper-bright);
+  color: var(--ink);
+}
+
+.principles .section-tag,
+.principle-grid p {
+  color: var(--muted);
+}
+
+.principle-grid {
+  gap: 34px;
+  border: 0;
+}
+
+.principle-grid article {
+  min-height: 220px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.principle-grid article:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+.principle-grid article:hover p {
+  color: var(--muted);
+}
+
+.principle-grid h3 {
+  font-family: var(--sans);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.product-detail {
+  min-height: 620px;
+}
+
+.product-code {
+  display: none;
+}
+
+.product-detail-nook {
+  margin: 0 2vw;
+  border-radius: 42px;
+  background: var(--soft-blue);
+}
+
+.product-links a {
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  padding: 0 2px;
+}
+
+.vault-links strong {
+  font-family: var(--sans);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.vision {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.vision .section-tag,
+.vision-kicker {
+  color: var(--cobalt);
+}
+
+.closing {
+  min-height: 610px;
+}
+
+.closing h2 {
+  font-size: clamp(80px, 12vw, 190px);
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hero-copy {
+    min-height: 600px;
+  }
+
+  .crypto-stage {
+    min-height: min(76vw, 650px);
+  }
+
+  .crypto-plate-art {
+    width: min(100%, 920px);
+  }
+
+  .work-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    height: 68px;
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding: 0 20px 24px;
+  }
+
+  .hero-copy {
+    min-height: 560px;
+    padding-top: 54px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(54px, 15vw, 64px);
+    line-height: 0.9;
+    overflow-wrap: normal;
+  }
+
+  .crypto-stage {
+    min-height: 360px;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .crypto-plate-art {
+    width: calc(100% + 12px);
+    max-width: none;
+    transform: translate(-50%, -50%);
+  }
+
+  .index-bar {
+    height: 80px;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 20px;
+  }
+
+  .registry-label,
+  .scroll-label {
+    display: none !important;
+  }
+
+  .work-section {
+    padding: 36px 20px 90px;
+  }
+
+  .panel {
+    padding: 84px 20px;
+  }
+
+  .manifesto,
+  .vision {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-heading,
+  .vision-kicker {
+    margin-top: 42px;
+  }
+
+  .manifesto-copy,
+  .vision-copy {
+    margin-top: 38px;
+  }
+
+  .principles {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-grid {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-nook {
+    margin: 0 10px;
+    border-radius: 28px;
+  }
+}
