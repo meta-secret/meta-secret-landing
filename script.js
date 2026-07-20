@@ -91,19 +91,52 @@ document.querySelectorAll('[data-year]').forEach((element) => {
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const privacyTerms = ['login', 'master password'];
-let privacyTermIndex = 0;
 
 if (privacyTerm && !reducedMotion) {
-  window.setInterval(() => {
-    if (document.hidden) return;
+  const typeMs = 58;
+  const deleteMs = 36;
+  const holdMs = 2400;
+  const gapMs = 320;
+  let termIndex = 0;
+  let timer = 0;
 
-    privacyTerm.classList.add('is-changing');
-    window.setTimeout(() => {
-      privacyTermIndex = (privacyTermIndex + 1) % privacyTerms.length;
-      privacyTerm.textContent = privacyTerms[privacyTermIndex];
-      privacyTerm.classList.remove('is-changing');
-    }, 180);
-  }, 4000);
+  const wait = (ms) =>
+    new Promise((resolve) => {
+      timer = window.setTimeout(resolve, ms);
+    });
+
+  const waitWhileHidden = async () => {
+    while (document.hidden) await wait(200);
+  };
+
+  const typewrite = async () => {
+    await wait(holdMs);
+
+    while (true) {
+      const current = privacyTerms[termIndex];
+      termIndex = (termIndex + 1) % privacyTerms.length;
+      const next = privacyTerms[termIndex];
+
+      for (let i = current.length; i >= 0; i -= 1) {
+        await waitWhileHidden();
+        privacyTerm.textContent = current.slice(0, i);
+        await wait(deleteMs);
+      }
+
+      await wait(gapMs);
+
+      for (let i = 1; i <= next.length; i += 1) {
+        await waitWhileHidden();
+        privacyTerm.textContent = next.slice(0, i);
+        await wait(typeMs);
+      }
+
+      await wait(holdMs);
+    }
+  };
+
+  typewrite();
+  window.addEventListener('pagehide', () => window.clearTimeout(timer));
 }
 
 if (reducedMotion || !('IntersectionObserver' in window)) {
