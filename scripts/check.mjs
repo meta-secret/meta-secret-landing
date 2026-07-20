@@ -25,6 +25,16 @@ for (const asset of ['styles.css', 'script.js', 'assets/favicon.svg', 'assets/og
   if (!existsSync(asset)) throw new Error(`Required asset is missing: ${asset}`);
 }
 
+for (const font of [
+  'assets/fonts/barlow-condensed-500.woff2',
+  'assets/fonts/barlow-condensed-600.woff2',
+  'assets/fonts/ibm-plex-mono-400.woff2',
+  'assets/fonts/ibm-plex-mono-500.woff2',
+  'assets/fonts/inter-latin.woff2',
+]) {
+  if (!existsSync(font)) throw new Error(`Self-hosted font is missing: ${font}`);
+}
+
 const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
 for (const match of html.matchAll(/href="#([^"]+)"/g)) {
   if (!ids.has(match[1])) throw new Error(`Anchor has no matching id: #${match[1]}`);
@@ -36,6 +46,14 @@ if (!html.includes('<main id="main">') || !html.includes('<h1>')) {
 
 if (html.includes('tildacdn') || html.includes('jquery')) {
   throw new Error('Legacy landing-page dependencies must not return.');
+}
+
+if (html.includes('fonts.googleapis.com') || html.includes('fonts.gstatic.com')) {
+  throw new Error('The page must not depend on third-party font delivery.');
+}
+
+if (!html.includes('name="color-scheme" content="light only"')) {
+  throw new Error('The light-only color scheme guard is missing.');
 }
 
 for (const forbiddenColor of ['#c7ff35', '#8df1c5', 'chartreuse', 'lime']) {
