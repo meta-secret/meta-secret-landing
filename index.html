@@ -13,8 +13,19 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light only" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#f3f2ee" />
+    <script>
+      (() => {
+        let savedTheme;
+        try { savedTheme = localStorage.getItem('meta-secret-theme'); } catch {}
+        const theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
     <meta
       name="description"
       content="Meta Secret builds open-source cryptographic tools for secrets that remain yours. Explore ID0 and Nook."
@@ -54,6 +65,10 @@
         <a href="#work">Work</a>
         <a href="#manifesto">Manifesto</a>
         <a href="https://github.com/meta-secret" target="_blank" rel="noreferrer">GitHub</a>
+        <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+          <span class="theme-glyph" aria-hidden="true"></span>
+          <span data-theme-label>Theme</span>
+        </button>
         <span class="status-dot" title="Systems online" aria-label="Systems online"></span>
       </nav>
     </header>

@@ -2,6 +2,41 @@ const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 const cryptoStage = document.querySelector('.crypto-stage');
+const themeButton = document.querySelector('.theme-toggle');
+const themeLabel = document.querySelector('[data-theme-label]');
+const themeColor = document.querySelector('meta[name="theme-color"]');
+const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+const storedTheme = () => {
+  try {
+    const value = localStorage.getItem('meta-secret-theme');
+    return value === 'light' || value === 'dark' ? value : null;
+  } catch {
+    return null;
+  }
+};
+
+const applyTheme = (theme, persist = false) => {
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+  themeButton?.setAttribute('aria-pressed', String(theme === 'dark'));
+  themeButton?.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+  if (themeLabel) themeLabel.textContent = theme === 'dark' ? 'Light' : 'Dark';
+  themeColor?.setAttribute('content', theme === 'dark' ? '#090b0a' : '#f3f2ee');
+  if (persist) {
+    try { localStorage.setItem('meta-secret-theme', theme); } catch {}
+  }
+};
+
+applyTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+
+themeButton?.addEventListener('click', () => {
+  applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+});
+
+themeMedia.addEventListener('change', (event) => {
+  if (!storedTheme()) applyTheme(event.matches ? 'dark' : 'light');
+});
 
 const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 72);
 updateHeader();
