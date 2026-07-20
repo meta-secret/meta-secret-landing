@@ -3353,3 +3353,32 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
     width: min(100%, 240px);
   }
 }
+
+/* Keep the desktop composition intact until navigation enters its mobile state.
+   Previously the hero stacked at 1000px while the header stayed desktop down to
+   900px, leaving an empty right half at common laptop and scaled-browser widths. */
+@media (min-width: 901px) and (max-width: 1000px) {
+  .hero {
+    min-height: 0;
+    grid-template-areas: "copy stage";
+    grid-template-columns: minmax(350px, 0.78fr) minmax(0, 1.22fr);
+    grid-template-rows: minmax(500px, calc(62svh - 8px));
+    gap: clamp(18px, 2.4vw, 30px);
+    padding: 0 3vw 12px;
+  }
+
+  .hero-copy {
+    min-height: 0;
+    padding: 32px 0 20px;
+  }
+
+  .crypto-stage {
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .crypto-plate-art {
+    inset: calc(50% - 34px) auto auto 50%;
+    width: min(104%, 820px);
+  }
+}
