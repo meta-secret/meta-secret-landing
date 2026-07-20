@@ -1,2 +1,3 @@
 _site/
+.wrangler/
 .DS_Store
