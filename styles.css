@@ -2182,6 +2182,50 @@ html[data-theme="dark"] .crypto-plate-art {
   }
 }
 
+/* Vision layout: keep the headline in the primary column at every width. */
+.vision {
+  grid-template-columns: 16% minmax(0, 1.5fr) minmax(240px, 0.65fr);
+  align-items: start;
+}
+
+.vision-heading {
+  min-width: 0;
+}
+
+.vision-heading h2 {
+  max-width: 11ch;
+  font-size: clamp(64px, 7vw, 118px);
+  overflow-wrap: normal;
+  text-wrap: balance;
+  word-break: normal;
+}
+
+.vision-copy {
+  align-self: end;
+}
+
+@media (max-width: 1200px) {
+  .vision {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .vision-heading h2 {
+    max-width: 12ch;
+  }
+
+  .vision-copy {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 700px) {
+  .vision-heading h2 {
+    max-width: 100%;
+    font-size: clamp(54px, 14vw, 72px);
+  }
+}
+
 /* Lower-page actions preserve the same primary/secondary hierarchy. */
 .product-links a:first-child {
   min-height: 52px;

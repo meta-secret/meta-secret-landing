@@ -58,6 +58,10 @@ if (!html.includes('<main id="main">') || !html.includes('<h1>')) {
   throw new Error('Document landmarks or primary heading are missing.');
 }
 
+if (!html.includes('<div class="vision-heading">') || !readFileSync('styles.css', 'utf8').includes('.vision-heading h2')) {
+  throw new Error('The vision headline must remain grouped in its primary responsive grid column.');
+}
+
 if (html.includes('tildacdn') || html.includes('jquery')) {
   throw new Error('Legacy landing-page dependencies must not return.');
 }
