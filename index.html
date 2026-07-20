@@ -28,7 +28,7 @@
     </script>
     <meta
       name="description"
-      content="Meta Secret builds open-source cryptographic tools for secrets that remain yours. Explore ID0 and Nook."
+      content="Meta Secret builds open-source cryptographic tools for secrets that remain yours. Explore id0 and Nook."
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Meta Secret — Privacy has no master key." />
@@ -79,13 +79,35 @@
           <p class="micro-label">Open cryptographic systems</p>
           <h1><span>Privacy has</span><span>no master</span><span>key.</span></h1>
           <p class="hero-lead">Tools for secrets that remain yours—even when platforms disappear.</p>
+
+          <div class="hero-actions reveal" aria-label="Direct product launches">
+            <div class="launch-deck">
+              <a class="launch-gate" href="https://id0.app" target="_blank" rel="noreferrer" aria-label="Launch id0 at id0.app">
+                <span class="gate-copy">
+                  <span class="system-tag">01 / threshold 3:5</span>
+                  <strong class="gate-title">Launch id0</strong>
+                  <span class="endpoint">id0.app</span>
+                </span>
+                <span class="gate-action" aria-hidden="true">↗</span>
+              </a>
+              <a class="launch-gate" href="https://nokey.sh" target="_blank" rel="noreferrer" aria-label="Open Nook at nokey.sh">
+                <span class="gate-copy">
+                  <span class="system-tag">02 / device key</span>
+                  <strong class="gate-title">Open Nook</strong>
+                  <span class="endpoint">nokey.sh</span>
+                </span>
+                <span class="gate-action" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
           <p class="trust-line">Open source <i>·</i> Device controlled <i>·</i> No central trust</p>
         </div>
 
         <div class="crypto-stage reveal" aria-label="Threshold cryptography reconstruction diagram">
           <img
             class="crypto-plate-art"
-            src="assets/crypto-plate.svg?v=formulas-visible"
+            src="assets/crypto-plate.svg?v=formula-axis-clear"
             alt="Five Shamir shares on a finite-field curve, elliptic curve point addition, and a Merkle proof"
           />
           <div class="crypto-meta crypto-meta-top" aria-hidden="true">
@@ -214,35 +236,11 @@
           </div>
         </div>
 
-        <div class="hero-actions reveal" aria-label="Direct product launches">
-          <div class="launch-deck">
-            <a class="launch-gate" href="https://id0.app" target="_blank" rel="noreferrer" aria-label="Launch ID0 at id0.app">
-              <span class="gate-copy">
-                <span class="system-tag">01 / advanced / threshold 3:5</span>
-                <strong class="gate-title">Launch ID0</strong>
-                <span class="endpoint">id0.app / direct</span>
-              </span>
-              <span class="gate-action" aria-hidden="true">↗</span>
-            </a>
-            <a class="launch-gate" href="https://nokey.sh" target="_blank" rel="noreferrer" aria-label="Open Nook at nokey.sh">
-              <span class="gate-copy">
-                <span class="system-tag">02 / local-first / device key</span>
-                <strong class="gate-title">Open Nook</strong>
-                <span class="endpoint">nokey.sh / direct</span>
-              </span>
-              <span class="gate-action" aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <div class="deck-footer">
-            <span class="proof-line">Route / <b>one click to product</b></span>
-            <a class="compare-link" href="#work">Compare systems <span aria-hidden="true">↓</span></a>
-          </div>
-        </div>
       </section>
 
       <nav class="index-bar" aria-label="Project index">
         <a class="registry-label" href="#work"><i></i>System registry</a>
-        <a href="#id0">01 / ID0</a>
+        <a href="#id0">01 / id0</a>
         <a href="#nook">02 / Nook</a>
         <span class="scroll-label"><b>2 endpoints</b><i>●</i> Online</span>
       </nav>
@@ -252,13 +250,13 @@
           <header class="module-header">
             <span>MS-PROTOCOL / 01</span>
             <span>TRUST MODEL: DISTRIBUTED</span>
-            <span class="module-status"><i></i>LIVE / ID0.APP</span>
+            <span class="module-status"><i></i>LIVE / id0.app</span>
           </header>
           <div class="module-body">
             <div class="module-index" aria-hidden="true">01</div>
             <div class="module-title">
               <p>Advanced system</p>
-              <h2>ID0</h2>
+              <h2>id0</h2>
               <span>Distributed vault infrastructure</span>
             </div>
             <dl class="module-specs">
@@ -267,23 +265,30 @@
               <div><dt>Authority</dt><dd>Multi-participant</dd></div>
             </dl>
             <div class="protocol-trace protocol-trace-id0" aria-hidden="true">
-              <svg viewBox="0 0 290 105">
-                <g class="trace-nodes">
-                  <circle cx="18" cy="18" r="6"/><circle cx="80" cy="18" r="6"/><circle cx="142" cy="18" r="6"/><circle cx="204" cy="18" r="6"/><circle cx="266" cy="18" r="6"/>
+              <svg viewBox="0 0 290 118">
+                <g class="trace-shards">
+                  <g class="trace-shard selected" transform="translate(4 4)"><path d="M14 0 27 8 23 25H5L1 8z"/><text class="shard-id" x="14" y="16">S1</text><text class="shard-hash" x="14" y="34">A1F2</text></g>
+                  <g class="trace-shard" transform="translate(66 4)"><path d="M14 0 27 8 23 25H5L1 8z"/><text class="shard-id" x="14" y="16">S2</text><text class="shard-hash" x="14" y="34">7B8E</text></g>
+                  <g class="trace-shard selected" transform="translate(128 4)"><path d="M14 0 27 8 23 25H5L1 8z"/><text class="shard-id" x="14" y="16">S3</text><text class="shard-hash" x="14" y="34">D4C7</text></g>
+                  <g class="trace-shard" transform="translate(190 4)"><path d="M14 0 27 8 23 25H5L1 8z"/><text class="shard-id" x="14" y="16">S4</text><text class="shard-hash" x="14" y="34">9F02</text></g>
+                  <g class="trace-shard selected" transform="translate(252 4)"><path d="M14 0 27 8 23 25H5L1 8z"/><text class="shard-id" x="14" y="16">S5</text><text class="shard-hash" x="14" y="34">3C6A</text></g>
                 </g>
                 <g class="trace-lines">
-                  <path d="M18 26v26h124M80 26v20h62M142 26v26M204 26v20h-62M266 26v26H142"/>
-                  <path class="trace-dash" d="M142 52v23"/>
+                  <path class="trace-branch selected" d="M18 30v29h124"/><path class="trace-branch" d="M80 30v20h62"/>
+                  <path class="trace-branch selected" d="M142 30v29"/><path class="trace-branch" d="M204 30v20h-62"/>
+                  <path class="trace-branch selected" d="M266 30v29H142"/>
+                  <path class="trace-quorum" d="M103 59h78"/><circle class="quorum-node" cx="142" cy="59" r="3"/>
+                  <path class="trace-dash" d="M142 62v18"/>
                 </g>
-                <rect class="trace-core" x="114" y="76" width="56" height="22"/>
-                <text x="142" y="91">3 / 5</text>
-                <text class="trace-label" x="18" y="9">S1</text><text class="trace-label" x="80" y="9">S2</text><text class="trace-label" x="142" y="9">S3</text><text class="trace-label" x="204" y="9">S4</text><text class="trace-label" x="266" y="9">S5</text>
+                <path class="trace-core" d="M108 81h68l8 10-8 10h-68l-8-10z"/>
+                <text class="trace-core-text" x="142" y="94">T = 3 / N = 5</text>
+                <text class="trace-verdict" x="142" y="114">QUORUM VERIFIED</text>
               </svg>
               <p>RECONSTRUCTION PATH <span>7A2F·4D6C</span></p>
             </div>
-            <a class="module-link crypto-cta" data-product="id0" href="https://id0.app" target="_blank" rel="noreferrer" aria-label="Open ID0.app">
+            <a class="module-link crypto-cta" data-product="id0" href="https://id0.app" target="_blank" rel="noreferrer" aria-label="Open id0.app">
               <span class="cta-proof" aria-hidden="true"><span></span></span>
-              <span class="cta-copy"><small data-cta-status>Proof accepted</small><strong>Open ID0.app</strong></span>
+              <span class="cta-copy"><small data-cta-status>Proof accepted</small><strong>Open id0.app</strong></span>
               <span class="cta-arrow" aria-hidden="true">↗</span>
             </a>
           </div>
@@ -308,13 +313,28 @@
               <div><dt>Storage</dt><dd>Ciphertext only</dd></div>
             </dl>
             <div class="protocol-trace protocol-trace-nook" aria-hidden="true">
-              <svg viewBox="0 0 290 105">
-                <g class="device-node"><rect x="5" y="29" width="44" height="55" rx="3"/><circle cx="27" cy="74" r="2"/></g>
-                <path class="trace-flow" d="M55 56h48"/>
-                <g class="cipher-block"><path d="m108 29 35-12 35 12v55l-35 12-35-12z"/><text x="143" y="59">ENC</text><text x="143" y="72">LOCAL</text></g>
-                <path class="trace-flow trace-dash" d="M183 56h48"/>
-                <g class="storage-node"><path d="M236 35c0-7 11-13 24-13s24 6 24 13v43c0 7-11 13-24 13s-24-6-24-13z"/><path d="M236 35c0 7 11 13 24 13s24-6 24-13M236 56c0 7 11 13 24 13s24-6 24-13"/></g>
-                <text class="trace-label" x="27" y="20">DEVICE</text><text class="trace-label" x="260" y="13">CIPHERTEXT</text>
+              <svg viewBox="0 0 290 118">
+                <g class="device-node">
+                  <path class="device-shell" d="M5 24h43l7 7v55l-7 7H5z"/>
+                  <path class="device-screen" d="M12 33h36v42H12z"/>
+                  <circle class="key-ring" cx="30" cy="48" r="6"/><path class="key-stem" d="M30 54v12m0-5h6m-6 4h4"/>
+                  <text class="trace-label" x="30" y="16">DEVICE KEY</text><text class="trace-hash" x="30" y="86">K:7A2F</text>
+                </g>
+                <g class="plaintext-rail"><path d="M61 58h39"/><circle cx="64" cy="58" r="2"/><text x="80" y="51">M</text></g>
+                <g class="cipher-block">
+                  <path class="cipher-shell" d="m108 28 36-16 36 16v58l-36 16-36-16z"/>
+                  <path class="cipher-orbit" d="M120 58c8-18 40-18 48 0-8 18-40 18-48 0z"/>
+                  <circle class="cipher-core" cx="144" cy="58" r="7"/>
+                  <text class="cipher-title" x="144" y="55">AEAD</text><text class="cipher-subtitle" x="144" y="70">LOCAL</text>
+                </g>
+                <g class="ciphertext-rail"><path class="trace-dash" d="M186 58h36"/><circle cx="220" cy="58" r="2"/><text x="204" y="51">{C}</text></g>
+                <g class="storage-node">
+                  <path class="storage-shell" d="M229 28h55v59h-55z"/>
+                  <path d="M229 47h55M229 67h55"/>
+                  <text class="trace-label" x="256" y="16">CIPHERTEXT</text>
+                  <text class="cipher-hash" x="256" y="40">C0·8F3A</text><text class="cipher-hash" x="256" y="60">C1·E91B</text><text class="cipher-hash" x="256" y="80">C2·4D6C</text>
+                </g>
+                <path class="boundary-scan" d="M0 109h290"/><path class="boundary-signal" d="M108 109h72"/>
               </svg>
               <p>KEY BOUNDARY <span>NEVER CROSSED</span></p>
             </div>
@@ -376,18 +396,18 @@
       </section>
 
       <section class="product-detail product-detail-id0 panel">
-        <div class="product-code" aria-hidden="true">ID0</div>
+        <div class="product-code" aria-hidden="true">id0</div>
         <div class="product-title reveal">
           <p>01 / Advanced system</p>
           <h2>No participant holds<br />the whole secret.</h2>
         </div>
         <div class="product-body reveal">
           <p>
-            ID0 is the advanced Meta Secret implementation: a decentralized password manager built around secret sharing,
+            id0 is the advanced Meta Secret implementation: a decentralized password manager built around secret sharing,
             biometric device access, and encrypted storage across independent participants.
           </p>
           <div class="product-links">
-            <a href="https://id0.app" target="_blank" rel="noreferrer">Launch ID0 <span>↗</span></a>
+            <a href="https://id0.app" target="_blank" rel="noreferrer">Launch id0 <span>↗</span></a>
             <a href="https://github.com/meta-secret/meta-secret-core" target="_blank" rel="noreferrer">Source code <span>↗</span></a>
           </div>
         </div>

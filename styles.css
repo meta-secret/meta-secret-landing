@@ -862,6 +862,180 @@ html[data-theme="dark"] .theme-glyph::after {
   color: var(--cobalt);
 }
 
+.protocol-trace-id0 .trace-shard path {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.1;
+}
+
+.protocol-trace-id0 .trace-shard.selected path {
+  fill: var(--signal);
+  stroke: var(--signal);
+}
+
+.protocol-trace-id0 .trace-shard .shard-id {
+  fill: var(--ink);
+  font-size: 7px;
+  font-weight: 500;
+}
+
+.protocol-trace-id0 .trace-shard.selected .shard-id {
+  fill: #fff;
+}
+
+.protocol-trace-id0 .trace-shard .shard-hash {
+  fill: var(--muted);
+  font-size: 4.5px;
+  letter-spacing: 0.04em;
+}
+
+.protocol-trace-id0 .trace-lines .trace-branch {
+  stroke: var(--diagram-muted);
+  stroke-width: 1;
+}
+
+.protocol-trace-id0 .trace-lines .trace-branch.selected {
+  stroke: var(--signal);
+  stroke-dasharray: 3 2;
+}
+
+.protocol-trace-id0 .trace-lines .trace-quorum {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.protocol-trace-id0 .quorum-node {
+  fill: var(--signal);
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+
+.protocol-trace-id0 .trace-dash {
+  stroke: var(--signal);
+}
+
+.protocol-trace-id0 svg .trace-core {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.protocol-trace-id0 svg text.trace-core-text {
+  fill: var(--paper);
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.protocol-trace-id0 .trace-verdict {
+  fill: var(--signal);
+  font-size: 4.5px;
+  letter-spacing: 0.14em;
+}
+
+.protocol-trace-id0 > p span {
+  color: var(--signal);
+}
+
+.protocol-trace-nook svg .device-shell,
+.protocol-trace-nook svg .storage-shell {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.1;
+}
+
+.protocol-trace-nook svg .device-screen {
+  fill: color-mix(in srgb, var(--ink) 4%, transparent);
+  stroke: var(--line);
+}
+
+.protocol-trace-nook svg .key-ring {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 1.7;
+}
+
+.protocol-trace-nook svg .key-stem {
+  stroke: var(--signal);
+  stroke-width: 1.7;
+}
+
+.protocol-trace-nook svg .trace-hash,
+.protocol-trace-nook svg .cipher-hash {
+  fill: var(--muted);
+  font-size: 4.5px;
+  letter-spacing: 0.04em;
+}
+
+.protocol-trace-nook svg .plaintext-rail path {
+  stroke: var(--diagram-muted);
+}
+
+.protocol-trace-nook svg .plaintext-rail circle,
+.protocol-trace-nook svg .ciphertext-rail circle {
+  fill: var(--signal);
+  stroke: var(--paper);
+  stroke-width: 1;
+}
+
+.protocol-trace-nook svg .plaintext-rail text,
+.protocol-trace-nook svg .ciphertext-rail text {
+  fill: var(--muted);
+  font-size: 5px;
+}
+
+.protocol-trace-nook svg .cipher-shell {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.protocol-trace-nook svg .cipher-orbit {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 1;
+  stroke-dasharray: 3 2;
+}
+
+.protocol-trace-nook svg .cipher-core {
+  fill: var(--signal);
+  stroke: var(--paper);
+  stroke-width: 1.2;
+}
+
+.protocol-trace-nook svg text.cipher-title {
+  fill: var(--paper);
+  font-size: 6px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.protocol-trace-nook svg text.cipher-subtitle {
+  fill: var(--signal);
+  font-size: 4.5px;
+  letter-spacing: 0.14em;
+}
+
+.protocol-trace-nook svg .ciphertext-rail .trace-dash {
+  stroke: var(--signal);
+  stroke-width: 1.2;
+}
+
+.protocol-trace-nook svg .storage-node path:not(.storage-shell) {
+  stroke: var(--line);
+}
+
+.protocol-trace-nook svg .boundary-scan {
+  stroke: var(--line);
+}
+
+.protocol-trace-nook svg .boundary-signal {
+  stroke: var(--signal);
+  stroke-width: 2;
+}
+
+.protocol-trace-nook > p span {
+  color: var(--signal);
+}
+
 .module-link {
   display: flex;
   flex-direction: column;
@@ -887,8 +1061,8 @@ html[data-theme="dark"] .theme-glyph::after {
   color: white;
 }
 
-.project-module:hover .module-link span,
-.module-link:focus-visible span {
+.project-module:hover .module-link:not(.crypto-cta) span,
+.module-link:not(.crypto-cta):focus-visible span {
   color: white;
 }
 
@@ -1682,8 +1856,8 @@ html[data-theme="dark"] .theme-glyph::after {
 }
 
 .hero-copy {
-  justify-content: center;
-  padding: 40px 0 26px;
+  justify-content: flex-start;
+  padding: 96px 0 26px;
 }
 
 .micro-label {
@@ -1746,8 +1920,8 @@ html[data-theme="dark"] .theme-glyph::after {
 
 .crypto-plate-art {
   position: absolute;
-  inset: 50% auto auto 50%;
-  width: min(100%, 1040px);
+  inset: calc(50% - 44px) auto auto 50%;
+  width: min(94%, 980px);
   height: auto;
   transform: translate(-50%, -50%);
   transition: filter 220ms ease;
@@ -1757,8 +1931,15 @@ html[data-theme="dark"] .crypto-plate-art {
   filter: invert(1) hue-rotate(180deg) brightness(0.96);
 }
 
+@media (min-width: 1001px) and (max-height: 780px) {
+  .crypto-plate-art {
+    inset: calc(50% + 52px) auto auto 50%;
+    width: min(82%, 840px);
+  }
+}
+
 .index-bar {
-  height: 92px;
+  height: 58px;
   grid-template-columns: 200px 1fr 1fr auto;
   gap: 30px;
   margin: 0 3vw;
@@ -1917,7 +2098,28 @@ html[data-theme="dark"] .crypto-plate-art {
   border-bottom: 0;
 }
 
-.manifesto,
+.manifesto {
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.55fr);
+  grid-template-rows: auto auto;
+  column-gap: clamp(56px, 7vw, 140px);
+  row-gap: 28px;
+}
+
+.manifesto > .section-tag {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.manifesto-heading {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.manifesto-copy {
+  grid-column: 2;
+  grid-row: 2;
+}
+
 .vision {
   grid-template-columns: 16% minmax(0, 1.5fr) minmax(240px, 0.65fr);
 }
@@ -2023,6 +2225,13 @@ html[data-theme="dark"] .crypto-plate-art {
     gap: 42px;
   }
 
+  .manifesto > .section-tag,
+  .manifesto-heading,
+  .manifesto-copy {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .manifesto-copy,
   .vision-copy {
     max-width: 700px;
@@ -2062,6 +2271,7 @@ html[data-theme="dark"] .crypto-plate-art {
   }
 
   .crypto-plate-art {
+    inset: 50% auto auto 50%;
     width: min(100%, 920px);
   }
 
@@ -2105,7 +2315,7 @@ html[data-theme="dark"] .crypto-plate-art {
   }
 
   .index-bar {
-    height: 80px;
+    height: 60px;
     grid-template-columns: 1fr 1fr;
     margin: 0 20px;
   }
@@ -2255,13 +2465,10 @@ html[data-theme="dark"] .crypto-plate-art {
   background: color-mix(in srgb, var(--cobalt) 7%, transparent);
 }
 
-/* Primary direct-launch deck: the two product routes dominate the first screen. */
+/* Compact proof links: direct routes live beside the hero copy. */
 .hero {
-  grid-template-areas:
-    "copy stage"
-    "actions actions";
-  grid-template-rows: minmax(400px, calc(100svh - 78px - 230px)) auto;
-  row-gap: 0;
+  grid-template-areas: "copy stage";
+  grid-template-rows: minmax(620px, calc(100svh - 78px));
 }
 
 .hero-copy {
@@ -2278,54 +2485,60 @@ html[data-theme="dark"] .crypto-plate-art {
 }
 
 .hero-actions {
-  grid-area: actions;
-  display: grid;
-  gap: 16px;
-  padding: 22px 3vw 20px;
-  border-top: 1px solid var(--line);
+  width: min(100%, 540px);
+  margin-top: 30px;
 }
 
 .launch-deck {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
 .launch-gate {
   position: relative;
   min-width: 0;
-  min-height: 144px;
+  min-height: 68px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 78px;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  align-items: stretch;
   padding: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--cobalt) 7%, transparent);
+  border: 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
   color: var(--ink);
   text-align: left;
   text-decoration: none;
-  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
 .launch-gate::before,
 .launch-gate::after {
   position: absolute;
-  left: 22px;
-  width: 46px;
-  height: 1px;
+  top: -4px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
   content: "";
-  background: var(--cobalt);
+  background: var(--paper);
 }
 
-.launch-gate::before { top: 18px; }
-.launch-gate::after { bottom: 18px; }
+.launch-gate::before { left: 0; }
+.launch-gate::after {
+  right: 0;
+  border-color: var(--signal);
+  background: var(--signal);
+}
 
 .gate-copy {
   min-width: 0;
   display: grid;
   align-content: center;
-  gap: 13px;
-  padding: 28px 24px;
+  grid-template-columns: 1fr auto;
+  gap: 4px 10px;
+  padding: 10px 12px 9px 2px;
 }
 
 .system-tag,
@@ -2344,69 +2557,70 @@ html[data-theme="dark"] .crypto-plate-art {
   color: var(--muted);
 }
 
+.system-tag {
+  grid-column: 1;
+  font-size: 8px;
+}
+
 .gate-title {
+  grid-column: 1;
   overflow: hidden;
-  font: 400 clamp(28px, 3.2vw, 50px)/1 var(--sans);
-  letter-spacing: -0.055em;
+  font: 500 clamp(16px, 1.25vw, 20px)/1.1 var(--sans);
+  letter-spacing: -0.035em;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.endpoint {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  writing-mode: vertical-rl;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+}
+
 .endpoint::before {
-  content: "● ";
-  color: var(--cobalt);
+  content: "";
 }
 
 .gate-action {
   position: relative;
   display: grid;
   place-items: center;
-  background: var(--cobalt);
-  color: white;
-  font: 500 22px/1 var(--mono);
-  transition: background 180ms ease;
+  border-left: 1px dashed var(--line);
+  background: transparent;
+  color: var(--ink);
+  font: 500 16px/1 var(--mono);
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
-.gate-action::before,
-.gate-action::after {
+.gate-action::before {
   position: absolute;
-  width: 11px;
-  height: 11px;
-  border: 1px solid currentColor;
+  width: 27px;
+  height: 27px;
+  border: 1px solid var(--line);
   border-radius: 50%;
   content: "";
 }
 
-.gate-action::before { top: 15px; }
-.gate-action::after { bottom: 15px; }
-
 .launch-gate:hover,
 .launch-gate:focus-visible {
-  border-color: var(--cobalt);
-  background: color-mix(in srgb, var(--cobalt) 13%, transparent);
-  transform: translateY(-2px);
+  border-color: var(--signal);
+  background: color-mix(in srgb, var(--signal) 7%, transparent);
+  transform: translateY(-1px);
 }
 
 .launch-gate:hover .gate-action,
 .launch-gate:focus-visible .gate-action {
-  background: var(--ultramarine);
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateX(2px);
 }
 
 .launch-gate:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
-}
-
-.deck-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.proof-line b {
-  color: var(--ink);
-  font-weight: 400;
 }
 
 /* Weighted project launch gates: Proof Rail 1, Key Shard 1, ZK Gate 2. */
@@ -2638,13 +2852,19 @@ html[data-cta-variant="zk"] .crypto-cta:focus-visible {
 }
 
 .module-link.crypto-cta {
-  width: clamp(280px, 20vw, 320px);
-  min-width: 280px;
-  min-height: 82px;
+  --cobalt: var(--signal);
+  --ultramarine: var(--signal);
+  grid-column: 2;
+  grid-row: 4;
+  width: min(100%, 280px);
+  min-width: 0;
+  min-height: 68px;
   height: auto;
   align-self: start;
+  justify-self: center;
   display: grid;
   padding: 0 16px 0 10px;
+  margin: 18px 12px 0 0;
   border-radius: 0;
   box-shadow: none;
   font: inherit;
@@ -2701,19 +2921,19 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
 
   .module-link.crypto-cta {
     grid-column: 1 / -1;
-    grid-row: 2;
-    width: 100%;
-    margin: 2px 0 28px;
+    grid-row: 4;
+    width: min(100%, 280px);
+    margin: 18px 0 0;
   }
 
   .module-specs {
     grid-column: 1 / -1;
-    grid-row: 3;
+    grid-row: 2;
   }
 
   .protocol-trace {
     grid-column: 1 / -1;
-    grid-row: 4;
+    grid-row: 3;
   }
 }
 
@@ -2721,9 +2941,8 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
   .hero {
     grid-template-areas:
       "copy"
-      "actions"
       "stage";
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
   }
 
   .hero-copy {
@@ -2742,7 +2961,8 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
   }
 
   .hero-actions {
-    padding: 22px 20px 24px;
+    width: 100%;
+    margin-top: 26px;
   }
 
   .crypto-cta {
@@ -2755,35 +2975,31 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
 
   .module-link.crypto-cta {
     grid-column: 1 / -1;
-    grid-row: 2;
-    width: 100%;
+    grid-row: 4;
+    width: min(100%, 280px);
     min-width: 0;
-    margin: 8px 0 28px;
+    margin: 18px 0 0;
   }
 
   .module-specs {
     grid-column: 1 / -1;
-    grid-row: 3;
+    grid-row: 2;
   }
 
   .protocol-trace {
     grid-column: 1 / -1;
-    grid-row: 4;
+    grid-row: 3;
   }
 }
 
 @media (max-width: 620px) {
   .launch-deck {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .launch-gate {
-    min-height: 132px;
-  }
-
-  .deck-footer {
-    align-items: flex-start;
-    flex-direction: column;
+    min-height: 64px;
   }
 }
 
@@ -2793,10 +3009,185 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
   }
 
   .module-link.crypto-cta {
-    width: 100%;
+    width: min(100%, 280px);
     min-width: 0;
-    min-height: 82px;
+    min-height: 68px;
     height: auto;
-    margin: 8px 0 28px;
+    margin: 18px 0 0;
+  }
+}
+
+/* Compact, organic page rhythm: keep related content visually connected. */
+:root {
+  --section-space-y: clamp(64px, 6vw, 88px);
+}
+
+.panel {
+  padding-block: var(--section-space-y);
+}
+
+.work-section {
+  padding-top: 32px;
+  padding-bottom: var(--section-space-y);
+}
+
+.principle-grid {
+  gap: clamp(22px, 2.4vw, 34px);
+  margin-top: clamp(38px, 4vw, 54px);
+}
+
+.principle-grid article {
+  min-height: 180px;
+  padding-block: 20px;
+}
+
+.product-detail {
+  min-height: 0;
+}
+
+.product-body {
+  padding-bottom: 0;
+}
+
+.closing {
+  min-height: 520px;
+}
+
+.closing .micro-label {
+  margin-bottom: 30px;
+}
+
+.closing-links {
+  margin-top: 36px;
+}
+
+.early-note {
+  padding-top: 36px;
+}
+
+@media (min-width: 1001px) {
+  .hero {
+    min-height: 0;
+    grid-template-rows: minmax(500px, calc(62svh - 8px));
+    padding-bottom: 12px;
+  }
+
+  .hero-copy {
+    padding: 32px 0 20px;
+  }
+
+  .hero-copy .micro-label {
+    margin-bottom: 20px;
+  }
+
+  .hero-lead {
+    margin-top: 24px;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
+  }
+
+  .crypto-plate-art {
+    inset: calc(50% - 44px) auto auto 50%;
+  }
+
+  .trust-line {
+    margin: 36px 0 0;
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 1001px) and (max-height: 780px) {
+  .crypto-plate-art {
+    inset: calc(50% - 22px) auto auto 50%;
+    width: min(78%, 800px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .manifesto,
+  .vision {
+    gap: 32px;
+  }
+
+  .product-detail {
+    gap: 46px;
+  }
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --section-space-y: clamp(54px, 8vw, 72px);
+  }
+
+  .hero-copy {
+    padding-top: 62px;
+    padding-bottom: 20px;
+  }
+
+  .hero-copy .micro-label {
+    margin-bottom: 22px;
+  }
+
+  .hero-lead,
+  .hero-actions {
+    margin-top: 24px;
+  }
+
+  .trust-line {
+    margin: 32px 0 0;
+    padding-top: 0;
+  }
+
+  .crypto-stage {
+    min-height: min(68vw, 560px);
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --section-space-y: 54px;
+  }
+
+  .work-section {
+    padding: 28px 20px 58px;
+  }
+
+  .panel {
+    padding: var(--section-space-y) 20px;
+  }
+
+  .manifesto,
+  .vision {
+    gap: 28px;
+  }
+
+  .manifesto-heading,
+  .vision-kicker,
+  .manifesto-copy,
+  .vision-copy {
+    margin-top: 0;
+  }
+
+  .principle-grid {
+    margin-top: 36px;
+  }
+
+  .product-detail {
+    gap: 34px;
+  }
+
+  .crypto-stage {
+    min-height: min(78vw, 420px);
+  }
+
+  .closing {
+    min-height: 0;
+  }
+
+  .early-note {
+    margin-top: 36px;
+    padding-top: 0;
   }
 }
