@@ -519,12 +519,22 @@ html[data-theme="dark"] .theme-glyph::after {
   stroke-dasharray: 5 4;
 }
 
+.ecc-reflection {
+  stroke: var(--cobalt) !important;
+  stroke-dasharray: 3 3;
+}
+
 .ecc-point {
   fill: var(--ink);
 }
 
 .ecc-point.accent {
   fill: var(--cobalt);
+}
+
+.ecc-point.intersection {
+  fill: var(--paper);
+  stroke: var(--ink);
 }
 
 .merkle rect {
