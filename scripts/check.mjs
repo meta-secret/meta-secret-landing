@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 
 const html = readFileSync('index.html', 'utf8');
 const notFoundHtml = readFileSync('404.html', 'utf8');
+const cryptoPlate = readFileSync('assets/crypto-plate.svg', 'utf8');
 const analyticsId = 'G-LSB54PR33J';
 const requiredText = [
   'Privacy has',
@@ -53,6 +54,14 @@ if (html.includes('tildacdn') || html.includes('jquery')) {
 
 if (html.includes('fonts.googleapis.com') || html.includes('fonts.gstatic.com')) {
   throw new Error('The page must not depend on third-party font delivery.');
+}
+
+for (const text of ['E(R) / y^2 = x^3 - x + 1', 'THIRD INTERSECTION R', 'P + Q = -R']) {
+  if (!cryptoPlate.includes(text)) throw new Error(`Elliptic-curve construction is incomplete: ${text}`);
+}
+
+if (cryptoPlate.includes('E(GF(p))') || cryptoPlate.includes('P + Q = R')) {
+  throw new Error('The obsolete elliptic-curve misconception returned.');
 }
 
 if (!html.includes('name="color-scheme" content="light dark"') || !notFoundHtml.includes('name="color-scheme" content="light dark"')) {
