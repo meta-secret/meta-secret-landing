@@ -1,6 +1,8 @@
 import { existsSync, readFileSync } from 'node:fs';
 
 const html = readFileSync('index.html', 'utf8');
+const notFoundHtml = readFileSync('404.html', 'utf8');
+const analyticsId = 'G-LSB54PR33J';
 const requiredText = [
   'Your secrets.',
   'Your keys.',
@@ -33,4 +35,13 @@ if (html.includes('tildacdn') || html.includes('jquery')) {
   throw new Error('Legacy landing-page dependencies must not return.');
 }
 
-console.log('Content, assets, anchors, and document landmarks are valid.');
+for (const [page, content] of [
+  ['index.html', html],
+  ['404.html', notFoundHtml],
+]) {
+  if (!content.includes(`gtag/js?id=${analyticsId}`) || !content.includes(`gtag('config', '${analyticsId}')`)) {
+    throw new Error(`Google Analytics is missing or misconfigured in ${page}.`);
+  }
+}
+
+console.log('Content, assets, anchors, analytics, and document landmarks are valid.');
