@@ -1,24 +1,28 @@
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
+const cryptoStage = document.querySelector('.crypto-stage');
 
-const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 72);
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
+const closeMenu = () => {
+  menuButton?.setAttribute('aria-expanded', 'false');
+  navigation?.classList.remove('open');
+  document.body.style.overflow = '';
+};
+
 menuButton?.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  navigation?.classList.toggle('open', !isOpen);
-  document.body.style.overflow = isOpen ? '' : 'hidden';
+  const willOpen = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(willOpen));
+  navigation?.classList.toggle('open', willOpen);
+  document.body.style.overflow = willOpen ? 'hidden' : '';
 });
 
-navigation?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuButton?.setAttribute('aria-expanded', 'false');
-    navigation.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMenu();
 });
 
 document.querySelectorAll('[data-year]').forEach((element) => {
@@ -38,7 +42,19 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
         }
       });
     },
-    { threshold: 0.12 },
+    { threshold: 0.08 },
   );
   document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+  cryptoStage?.addEventListener('pointermove', (event) => {
+    const bounds = cryptoStage.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    cryptoStage.style.setProperty('--pointer-x', `${x * 8}px`);
+    cryptoStage.style.setProperty('--pointer-y', `${y * 8}px`);
+  });
+  cryptoStage?.addEventListener('pointerleave', () => {
+    cryptoStage.style.setProperty('--pointer-x', '0px');
+    cryptoStage.style.setProperty('--pointer-y', '0px');
+  });
 }

@@ -4,8 +4,11 @@ const html = readFileSync('index.html', 'utf8');
 const notFoundHtml = readFileSync('404.html', 'utf8');
 const analyticsId = 'G-LSB54PR33J';
 const requiredText = [
-  'Your secrets.',
-  'Your keys.',
+  'Privacy has',
+  'no master key.',
+  'Open tools for secrets that remain yours.',
+  'Secrets belong to people,',
+  'Keys, not accounts',
   'https://id0.app',
   'https://simple.nokey.sh',
   'https://sentinel.nokey.sh',
@@ -33,6 +36,13 @@ if (!html.includes('<main id="main">') || !html.includes('<h1>')) {
 
 if (html.includes('tildacdn') || html.includes('jquery')) {
   throw new Error('Legacy landing-page dependencies must not return.');
+}
+
+for (const forbiddenColor of ['#c7ff35', '#8df1c5', 'chartreuse', 'lime']) {
+  const surfaces = ['styles.css', 'assets/favicon.svg', 'assets/og-card.svg']
+    .map((path) => readFileSync(path, 'utf8').toLowerCase())
+    .join('\n');
+  if (surfaces.includes(forbiddenColor)) throw new Error(`Forbidden green accent returned: ${forbiddenColor}`);
 }
 
 for (const [page, content] of [

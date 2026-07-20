@@ -13,272 +13,351 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#070908" />
+    <meta name="theme-color" content="#f3f2ee" />
     <meta
       name="description"
-      content="Meta Secret builds open-source, device-controlled ways to protect passwords, identities, and high-value secrets."
+      content="Meta Secret builds open-source cryptographic tools for secrets that remain yours. Explore ID0 and Nook."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Meta Secret — Your secrets. Your keys." />
+    <meta property="og:title" content="Meta Secret — Privacy has no master key." />
     <meta
       property="og:description"
-      content="Open-source tools for device-controlled secrets, from everyday passwords to quorum-protected vaults."
+      content="Open-source, device-controlled secret infrastructure. No central trust."
     />
     <meta property="og:url" content="https://meta-secret.org/" />
     <meta property="og:image" content="https://meta-secret.org/assets/og-card.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://meta-secret.org/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <title>Meta Secret — Your secrets. Your keys.</title>
+    <title>Meta Secret — Privacy has no master key.</title>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="noise" aria-hidden="true"></div>
 
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Meta Secret home">
-        <svg class="brand-mark" viewBox="0 0 42 42" aria-hidden="true">
-          <path d="M7 21a14 14 0 0 1 27-5" />
-          <path d="M35 21A14 14 0 0 1 8 26" />
-          <circle cx="8" cy="26" r="2.6" />
-          <circle cx="34" cy="16" r="2.6" />
+        <svg class="brand-mark" viewBox="0 0 34 24" aria-hidden="true">
+          <path d="M1 2h14v20H1zM19 2h14v8H19zM19 14h5v8h-5z" />
+          <circle cx="30" cy="18" r="4" />
         </svg>
-        <span>META<span class="brand-slash">//</span>SECRET</span>
+        <span>Meta Secret</span>
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
         <span class="sr-only">Toggle navigation</span>
       </button>
 
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#mission">Mission</a>
-        <a href="#projects">Projects</a>
-        <a href="#principles">Principles</a>
-        <a class="nav-github" href="https://github.com/meta-secret" target="_blank" rel="noreferrer">
-          GitHub <span aria-hidden="true">↗</span>
-        </a>
+        <a href="#work">Work</a>
+        <a href="#manifesto">Manifesto</a>
+        <a href="https://github.com/meta-secret" target="_blank" rel="noreferrer">GitHub</a>
+        <span class="status-dot" title="Systems online" aria-label="Systems online"></span>
       </nav>
     </header>
 
     <main id="main">
-      <section id="top" class="hero section-shell">
+      <section id="top" class="hero">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> Open-source secret infrastructure</p>
-          <h1>Your secrets.<br /><em>Your keys.</em></h1>
-          <p class="hero-lead">
-            We build tools where access begins with the devices you control—not an account held by someone else.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Explore the projects</a>
-            <a class="button button-quiet" href="https://github.com/meta-secret" target="_blank" rel="noreferrer">
-              Read the source <span aria-hidden="true">↗</span>
-            </a>
-          </div>
+          <p class="micro-label">MS / CRYPTOGRAPHIC SYSTEMS / 2026</p>
+          <h1>Privacy has<br />no master key.</h1>
+          <p class="hero-lead">Open tools for secrets that remain yours.</p>
+          <a class="circle-link" href="#work">
+            <span class="circle-arrow" aria-hidden="true">→</span>
+            <span>Explore the system</span>
+          </a>
+          <p class="trust-line">Open source <i>·</i> Device controlled <i>·</i> No central trust</p>
         </div>
 
-        <div class="hero-system reveal" aria-label="A network of user-controlled devices protecting an encrypted secret">
-          <div class="system-grid" aria-hidden="true"></div>
-          <div class="orbit orbit-one" aria-hidden="true"></div>
-          <div class="orbit orbit-two" aria-hidden="true"></div>
-          <div class="device device-a" aria-hidden="true"><span></span></div>
-          <div class="device device-b" aria-hidden="true"><span></span></div>
-          <div class="device device-c" aria-hidden="true"><span></span></div>
-          <div class="core" aria-hidden="true">
-            <span class="core-label">SECRET</span>
-            <svg viewBox="0 0 70 70">
-              <path d="M22 31v-7a13 13 0 0 1 26 0v7" />
-              <rect x="16" y="30" width="38" height="29" rx="7" />
-              <circle cx="35" cy="43" r="3" />
-              <path d="M35 46v6" />
-            </svg>
+        <div class="crypto-stage reveal" aria-label="Threshold cryptography reconstruction diagram">
+          <div class="crypto-meta crypto-meta-top" aria-hidden="true">
+            <span>t = 3 / n = 5</span><span>GF(p)</span><span>256 bit</span>
           </div>
-          <span class="signal signal-a" aria-hidden="true"></span>
-          <span class="signal signal-b" aria-hidden="true"></span>
-          <span class="signal signal-c" aria-hidden="true"></span>
-          <p class="system-caption"><span>01</span> Authority stays at the edge</p>
+
+          <svg class="crypto-diagram" viewBox="0 0 820 560" role="img" aria-labelledby="crypto-title crypto-desc">
+            <title id="crypto-title">A threshold secret reconstructed from three of five shards</title>
+            <desc id="crypto-desc">
+              Five independent shards sit on a finite-field curve. Three selected shards form a proof path and reconstruct
+              the secret without any single participant holding the complete key.
+            </desc>
+            <defs>
+              <pattern id="point-grid" width="48" height="44" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.7" fill="currentColor" opacity=".22" />
+              </pattern>
+              <pattern id="blue-grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M10 0H0v10" fill="none" stroke="currentColor" stroke-width=".6" opacity=".3" />
+              </pattern>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M0 0 10 5 0 10z" fill="currentColor" />
+              </marker>
+            </defs>
+
+            <g class="field-grid">
+              <rect x="30" y="70" width="490" height="280" fill="url(#point-grid)" />
+              <path d="M30 350V70M30 350h490" />
+              <text x="18" y="63">f(x)</text>
+              <text x="526" y="366">x</text>
+              <text x="32" y="386">FINITE FIELD / SHAMIR SPLIT</text>
+            </g>
+
+            <path class="polynomial" d="M48 320C116 252 170 287 226 262S328 233 383 185 462 91 510 114" />
+
+            <g class="share-guides">
+              <path d="M91 294v116M183 274v136M278 247v163M378 190v220M478 105v305" />
+            </g>
+
+            <g class="curve-points">
+              <circle cx="91" cy="294" r="6" />
+              <circle cx="183" cy="274" r="6" />
+              <circle cx="278" cy="247" r="6" />
+              <circle cx="378" cy="190" r="6" />
+              <circle cx="478" cy="105" r="6" />
+            </g>
+
+            <g class="shards">
+              <g class="shard selected" transform="translate(65 410)">
+                <path d="M27 0 54 17 47 54 8 54 0 17z" />
+                <text x="27" y="34">S1</text>
+                <text class="hash" x="27" y="70">A1F2·9C3B</text>
+              </g>
+              <g class="shard" transform="translate(157 410)">
+                <path d="M27 0 54 17 47 54 8 54 0 17z" />
+                <text x="27" y="34">S2</text>
+                <text class="hash" x="27" y="70">788E·2D91</text>
+              </g>
+              <g class="shard selected" transform="translate(252 410)">
+                <path d="M27 0 54 17 47 54 8 54 0 17z" />
+                <text x="27" y="34">S3</text>
+                <text class="hash" x="27" y="70">D4C7·E6A1</text>
+              </g>
+              <g class="shard" transform="translate(352 410)">
+                <path d="M27 0 54 17 47 54 8 54 0 17z" />
+                <text x="27" y="34">S4</text>
+                <text class="hash" x="27" y="70">9F02·B7D3</text>
+              </g>
+              <g class="shard selected" transform="translate(452 410)">
+                <path d="M27 0 54 17 47 54 8 54 0 17z" />
+                <text x="27" y="34">S5</text>
+                <text class="hash" x="27" y="70">3C6A·F1E0</text>
+              </g>
+            </g>
+
+            <g class="proof-lines">
+              <path d="M92 480v35h232" />
+              <path d="M279 480v35" />
+              <path d="M479 480v35H324" />
+              <path d="M324 515v24" marker-end="url(#arrow)" />
+            </g>
+            <g class="secret-output">
+              <circle cx="324" cy="544" r="13" />
+              <text x="348" y="539">RECONSTRUCT</text>
+              <text x="348" y="556">7A2F·4D6C·E91B·8F3A</text>
+            </g>
+
+            <g class="ecc" transform="translate(555 62)">
+              <text x="0" y="0">E / ELLIPTIC CURVE</text>
+              <path class="axis" d="M0 118h226M110 22v200" />
+              <path class="ecc-curve" d="M8 132C44 83 90 80 106 109C126 146 84 174 43 159M121 86C142 47 177 35 213 47M121 150C153 199 189 199 218 176" />
+              <path class="ecc-chord" d="M44 103 184 57v126" />
+              <circle class="ecc-point" cx="44" cy="103" r="5" />
+              <circle class="ecc-point" cx="184" cy="57" r="5" />
+              <circle class="ecc-point accent" cx="184" cy="183" r="6" />
+              <text x="31" y="93">P</text><text x="190" y="51">Q</text><text x="193" y="190">P+Q</text>
+            </g>
+
+            <g class="merkle" transform="translate(578 330)">
+              <text x="0" y="0">MERKLE PROOF / S3</text>
+              <g transform="translate(0 20)">
+                <rect x="0" y="0" width="58" height="24" />
+                <text x="29" y="16">ROOT</text>
+                <path d="M64 12h67" />
+                <text class="hash-end" x="138" y="16">E3F7·2D9A</text>
+              </g>
+              <g transform="translate(0 57)">
+                <rect x="0" y="0" width="58" height="24" />
+                <text x="29" y="16">H2</text>
+                <path d="M64 12h67" />
+                <text class="hash-end" x="138" y="16">D4A8·6C11</text>
+              </g>
+              <g class="selected-block" transform="translate(0 94)">
+                <rect x="0" y="0" width="58" height="24" />
+                <text x="29" y="16">H1</text>
+                <path d="M64 12h67" />
+                <text class="hash-end" x="138" y="16">C8D5·1F90</text>
+              </g>
+              <path class="merkle-flow" d="M29 138V122M29 94V81M29 57V44" marker-end="url(#arrow)" />
+            </g>
+          </svg>
+
+          <div class="crypto-legend" aria-hidden="true">
+            <span><i class="selected-key"></i> Selected shard</span>
+            <span><i></i> Independent shard</span>
+          </div>
         </div>
       </section>
 
-      <section class="manifesto section-shell reveal" aria-label="Meta Secret belief">
-        <p class="section-index">01 / Belief</p>
-        <blockquote>
-          The safest central keeper<br />
-          is <em>no central keeper.</em>
-        </blockquote>
-        <p>
-          The internet taught us to rent our identity from platforms. We are working on the opposite:
-          cryptographic authority that begins with people, is shared only by deliberate consent, and remains useful
-          even when a service disappears.
-        </p>
-      </section>
+      <nav class="index-bar" aria-label="Project index">
+        <a href="#work">Index</a>
+        <a href="#id0">01 / ID0</a>
+        <a href="#nook">02 / Nook</a>
+        <span class="scroll-label">Scroll <i>↓</i></span>
+      </nav>
 
-      <section id="mission" class="mission section-shell">
-        <div class="section-heading reveal">
-          <p class="section-index">02 / Mission</p>
-          <h2>Make digital ownership<br />practical, not theoretical.</h2>
-        </div>
-        <div class="mission-grid">
-          <article class="mission-card reveal">
-            <span class="card-number">01</span>
-            <h3>Move trust to your devices</h3>
-            <p>Your approved devices hold the authority. There is no universal account password waiting to be phished.</p>
-          </article>
-          <article class="mission-card reveal">
-            <span class="card-number">02</span>
-            <h3>Keep storage replaceable</h3>
-            <p>Clouds and servers should carry encrypted data—not own the keys or decide who gets access.</p>
-          </article>
-          <article class="mission-card reveal">
-            <span class="card-number">03</span>
-            <h3>Expose the machinery</h3>
-            <p>Security deserves inspection. Our products and cryptographic foundations are built in the open.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="projects section-shell">
-        <div class="section-heading reveal">
-          <p class="section-index">03 / Projects</p>
-          <h2>One mission.<br />Two paths.</h2>
-          <p class="section-intro">
-            Start with an everyday vault, protect high-value secrets with a quorum, or explore the advanced distributed system.
-          </p>
-        </div>
-
-        <article class="project project-id0 reveal">
-          <div class="project-meta">
-            <span class="status"><i></i> Live</span>
-            <span>Advanced / distributed</span>
+      <section id="work" class="work-section">
+        <article id="id0" class="project-row reveal">
+          <p class="project-type">01 / Distributed</p>
+          <div class="project-name"><span>01</span><i>/</i><h2>ID0</h2></div>
+          <div class="project-summary">
+            <p>Distributed vault infrastructure</p>
+            <span>Threshold cryptography distributes trust across people and devices.</span>
           </div>
-          <div class="project-copy">
-            <p class="project-kicker">META SECRET / ID0</p>
-            <h3>A secret can be safe<br />without being in one place.</h3>
-            <p>
-              id0 is the advanced Meta Secret implementation: a decentralized password manager built around secret sharing,
-              biometric device access, and encrypted storage across independent participants.
-            </p>
-            <div class="project-actions">
-              <a class="button button-light" href="https://id0.app" target="_blank" rel="noreferrer">Launch id0 <span aria-hidden="true">↗</span></a>
-              <a class="text-link" href="https://github.com/meta-secret/meta-secret-core" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-          <div class="shards" aria-hidden="true">
-            <span class="shard shard-1">01</span>
-            <span class="shard shard-2">02</span>
-            <span class="shard shard-3">03</span>
-            <svg viewBox="0 0 400 300">
-              <path d="M85 73 203 153 317 66M203 153l8 98M85 73l126 178M317 66 211 251" />
-            </svg>
-          </div>
+          <a class="row-link" href="https://id0.app" target="_blank" rel="noreferrer" aria-label="Open ID0">↗</a>
         </article>
 
-        <article class="project project-nook reveal">
-          <div class="project-meta">
-            <span class="status"><i></i> Early access</span>
-            <span>Lightweight / local-first</span>
+        <article id="nook" class="project-row project-row-nook reveal">
+          <p class="project-type">02 / Local-first</p>
+          <div class="project-name"><span>02</span><i>/</i><h2>Nook</h2></div>
+          <div class="project-summary">
+            <p>Keys, not accounts</p>
+            <span>Lightweight, device-controlled vaults for everyday and high-value secrets.</span>
           </div>
-          <div class="project-copy">
-            <p class="project-kicker">NOOK / KEYS, NOT ACCOUNTS</p>
-            <h3>Device-controlled vaults<br />for real life.</h3>
-            <p>
-              Nook is a lightweight, client-side password and secrets manager. No Nook account. No master password.
-              Your vault is encrypted before it reaches storage and opened only by identities you authorize.
-            </p>
-            <div class="vault-choices">
-              <a href="https://simple.nokey.sh" target="_blank" rel="noreferrer">
-                <span class="choice-icon">S</span>
-                <span><strong>Simple Vault</strong><small>Everyday passwords and secrets</small></span>
-                <b aria-hidden="true">↗</b>
-              </a>
-              <a href="https://sentinel.nokey.sh" target="_blank" rel="noreferrer">
-                <span class="choice-icon choice-icon-sentinel">V</span>
-                <span><strong>Sentinel Vault</strong><small>Quorum-protected high-value secrets</small></span>
-                <b aria-hidden="true">↗</b>
-              </a>
-            </div>
-            <div class="project-actions">
-              <a class="button button-dark" href="https://nokey.sh" target="_blank" rel="noreferrer">Meet Nook <span aria-hidden="true">↗</span></a>
-              <a class="text-link dark-link" href="https://github.com/meta-secret/nook" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-          <div class="nook-window" aria-hidden="true">
-            <div class="window-bar"><i></i><i></i><i></i><span>YOUR VAULT</span></div>
-            <div class="window-body">
-              <div class="key-row"><span></span><i></i></div>
-              <div class="key-row"><span></span><i></i></div>
-              <div class="key-row"><span></span><i></i></div>
-              <div class="key-row"><span></span><i></i></div>
-            </div>
-            <div class="window-tag">ENCRYPTED ON DEVICE</div>
-          </div>
+          <a class="row-link" href="https://nokey.sh" target="_blank" rel="noreferrer" aria-label="Open Nook">↗</a>
         </article>
       </section>
 
-      <section id="principles" class="principles section-shell">
-        <div class="section-heading reveal">
-          <p class="section-index">04 / Principles</p>
-          <h2>What we refuse<br />to compromise.</h2>
+      <section id="manifesto" class="manifesto panel reveal">
+        <div class="section-tag">Manifesto / 01</div>
+        <div class="manifesto-heading">
+          <p>Our mission</p>
+          <h2>Secrets belong to people,<br />not platforms.</h2>
         </div>
-        <div class="principle-list">
+        <div class="manifesto-copy">
+          <p>
+            Digital ownership should not depend on a company keeping your account alive. Meta Secret builds open-source
+            cryptographic systems where authority begins on devices you control and access is shared only by deliberate consent.
+          </p>
+          <p>
+            Storage can be replaced. Infrastructure can disappear. Your ability to prove who you are—and recover what is
+            yours—should survive both.
+          </p>
+        </div>
+      </section>
+
+      <section class="principles panel">
+        <div class="section-tag">Protocol / 02</div>
+        <div class="principles-heading reveal">
+          <p>Design constraints</p>
+          <h2>We remove the<br />single point of trust.</h2>
+        </div>
+        <div class="principle-grid">
           <article class="reveal">
             <span>01</span>
-            <h3>Keys before accounts</h3>
-            <p>Identity should be proven cryptographically, not borrowed from a central user database.</p>
+            <h3>Device controlled</h3>
+            <p>Authority lives with approved devices and cryptographic identities—not a central account database.</p>
           </article>
           <article class="reveal">
             <span>02</span>
-            <h3>Consent before access</h3>
-            <p>New devices and sensitive actions should require visible, deliberate authorization.</p>
+            <h3>Ciphertext outside</h3>
+            <p>Secrets are encrypted before leaving the client. Storage providers carry data without owning access.</p>
           </article>
           <article class="reveal">
             <span>03</span>
-            <h3>Ciphertext beyond the edge</h3>
-            <p>Secrets are encrypted before they leave the client. Storage providers see encrypted material.</p>
+            <h3>Consent required</h3>
+            <p>New participants and sensitive operations require visible, deliberate authorization.</p>
           </article>
           <article class="reveal">
             <span>04</span>
-            <h3>Recovery without a back door</h3>
-            <p>Resilience should come from devices, trusted participants, or keys you choose—not universal recovery access.</p>
+            <h3>Open machinery</h3>
+            <p>Security deserves inspection. The code, protocols, and trade-offs are built in the open.</p>
           </article>
         </div>
       </section>
 
-      <section class="vision section-shell reveal">
-        <div>
-          <p class="section-index">05 / The horizon</p>
-          <h2>A future where losing a platform does not mean losing yourself.</h2>
+      <section class="product-detail product-detail-id0 panel">
+        <div class="product-code" aria-hidden="true">ID0</div>
+        <div class="product-title reveal">
+          <p>01 / Advanced system</p>
+          <h2>No participant holds<br />the whole secret.</h2>
         </div>
-        <p>
-          We imagine digital identity as portable personal infrastructure: devices can prove authority, encrypted data can
-          move between storage providers, and people can coordinate trust without placing every secret under one operator.
-          Meta Secret is building toward that future one usable vault at a time.
+        <div class="product-body reveal">
+          <p>
+            ID0 is the advanced Meta Secret implementation: a decentralized password manager built around secret sharing,
+            biometric device access, and encrypted storage across independent participants.
+          </p>
+          <div class="product-links">
+            <a href="https://id0.app" target="_blank" rel="noreferrer">Launch ID0 <span>↗</span></a>
+            <a href="https://github.com/meta-secret/meta-secret-core" target="_blank" rel="noreferrer">Source code <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-detail product-detail-nook panel">
+        <div class="product-code" aria-hidden="true">NK</div>
+        <div class="product-title reveal">
+          <p>02 / Lightweight system</p>
+          <h2>Keys, not accounts.</h2>
+        </div>
+        <div class="product-body reveal">
+          <p>
+            Nook is a local-first password and secrets manager. Choose the vault that matches the trust model you need;
+            both keep cryptographic authority under your control.
+          </p>
+          <div class="vault-links">
+            <a href="https://simple.nokey.sh" target="_blank" rel="noreferrer">
+              <span>01</span><strong>Simple Vault</strong><small>Everyday passwords and secrets</small><b>↗</b>
+            </a>
+            <a href="https://sentinel.nokey.sh" target="_blank" rel="noreferrer">
+              <span>02</span><strong>Sentinel Vault</strong><small>Quorum-protected high-value secrets</small><b>↗</b>
+            </a>
+          </div>
+          <div class="product-links">
+            <a href="https://nokey.sh" target="_blank" rel="noreferrer">Explore Nook <span>↗</span></a>
+            <a href="https://github.com/meta-secret/nook" target="_blank" rel="noreferrer">Source code <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="vision panel reveal">
+        <div class="section-tag">Horizon / 03</div>
+        <p class="vision-kicker">Our vision</p>
+        <h2>A future where losing a platform does not mean losing yourself.</h2>
+        <p class="vision-copy">
+          Portable identity. Replaceable storage. Deliberate trust. Personal infrastructure that remains useful when a
+          service, company, or network disappears.
         </p>
       </section>
 
-      <section class="cta section-shell reveal">
-        <p class="eyebrow"><span></span> Build in the open</p>
-        <h2>Inspect it. Use it.<br />Help shape it.</h2>
-        <div class="cta-actions">
-          <a class="button button-primary" href="https://github.com/meta-secret" target="_blank" rel="noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a>
-          <a class="button button-quiet" href="mailto:contact@meta-secret.org">contact@meta-secret.org</a>
+      <section class="closing panel reveal">
+        <p class="micro-label">OPEN SOURCE / BUILD WITH US</p>
+        <h2>Inspect the<br />machinery.</h2>
+        <div class="closing-links">
+          <a class="circle-link circle-link-dark" href="https://github.com/meta-secret" target="_blank" rel="noreferrer">
+            <span class="circle-arrow" aria-hidden="true">↗</span><span>Explore GitHub</span>
+          </a>
+          <a href="mailto:contact@meta-secret.org">contact@meta-secret.org</a>
         </div>
-        <p class="early-note">Meta Secret projects are early-stage software. Keep independent backups of important credentials and recovery material.</p>
+        <p class="early-note">
+          Meta Secret projects are early-stage software. Keep independent backups of important credentials and recovery material.
+        </p>
       </section>
     </main>
 
-    <footer class="site-footer section-shell">
-      <a class="brand footer-brand" href="#top" aria-label="Back to top">
-        <svg class="brand-mark" viewBox="0 0 42 42" aria-hidden="true">
-          <path d="M7 21a14 14 0 0 1 27-5" />
-          <path d="M35 21A14 14 0 0 1 8 26" />
-          <circle cx="8" cy="26" r="2.6" />
-          <circle cx="34" cy="16" r="2.6" />
+    <footer class="site-footer">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <svg class="brand-mark" viewBox="0 0 34 24" aria-hidden="true">
+          <path d="M1 2h14v20H1zM19 2h14v8H19zM19 14h5v8h-5z" />
+          <circle cx="30" cy="18" r="4" />
         </svg>
-        <span>META<span class="brand-slash">//</span>SECRET</span>
+        <span>Meta Secret</span>
       </a>
-      <p>Open source. Device controlled. Built for people.</p>
+      <p>Open source · Device controlled · No central trust</p>
       <p>© <span data-year>2026</span> Meta Secret</p>
     </footer>
 

@@ -5,9 +5,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSB54PR33J"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-LSB54PR33J');
     </script>
@@ -15,22 +13,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>Page not found — Meta Secret</title>
     <style>
-      main { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 32px; }
-      h1 { margin: 0; color: var(--acid); font-size: clamp(110px, 25vw, 280px); line-height: .8; letter-spacing: -.08em; }
-      p { color: rgba(242,240,232,.6); }
+      .not-found { min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto; padding: 28px 3vw; }
+      .not-found-meta, .not-found-footer { display: flex; justify-content: space-between; font: 400 9px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+      .not-found-body { display: grid; place-items: center; text-align: center; }
+      .not-found h1 { margin: 0; color: var(--ink); font: 600 clamp(170px, 33vw, 560px)/.72 var(--display); letter-spacing: -.06em; }
+      .not-found h1 span { color: var(--cobalt); }
+      .not-found-body p { margin: 45px 0 0; font: 400 12px/1.6 var(--mono); }
+      .not-found .circle-link { margin-inline: auto; }
+      @media (max-width: 600px) { .not-found h1 { font-size: 52vw; } .not-found-meta span:last-child { display: none; } }
     </style>
   </head>
   <body>
-    <main>
-      <div>
-        <p class="eyebrow" style="justify-content:center"><span></span> Signal lost <span></span></p>
-        <h1>404</h1>
-        <p>This path does not hold a secret.</p>
-        <a class="button button-primary" href="/">Return home</a>
+    <main class="not-found">
+      <div class="not-found-meta"><span>Meta Secret / Error</span><span>Route proof failed</span></div>
+      <div class="not-found-body">
+        <div>
+          <h1>4<span>0</span>4</h1>
+          <p>This path does not hold a secret.</p>
+          <a class="circle-link" href="/"><span class="circle-arrow" aria-hidden="true">←</span><span>Return home</span></a>
+        </div>
       </div>
+      <div class="not-found-footer"><span>H(path) ≠ route</span><span>Open source · No central trust</span></div>
     </main>
   </body>
 </html>
