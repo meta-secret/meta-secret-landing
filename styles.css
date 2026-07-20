@@ -3191,3 +3191,165 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
     padding-top: 0;
   }
 }
+
+/* Product actions use the same proof-gate language as the system modules. */
+.product-links {
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.product-links a:first-child,
+.product-links a:first-child:hover,
+.product-links a:first-child:focus-visible {
+  position: relative;
+  min-width: 188px;
+  min-height: 50px;
+  justify-content: space-between;
+  padding: 0 24px 0 42px;
+  border: 0;
+  clip-path: polygon(10px 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 10px 100%, 0 50%);
+  background: var(--inverse-bg);
+  color: var(--inverse-fg);
+  box-shadow: inset 0 0 0 1px var(--inverse-line);
+}
+
+.product-links a:first-child::before {
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  content: "";
+  background: var(--signal);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 18%, transparent);
+  transform: translateY(-50%);
+}
+
+.product-links a:first-child:hover,
+.product-links a:first-child:focus-visible {
+  background: var(--signal);
+  color: #fff;
+  box-shadow: none;
+  transform: translateY(-2px);
+}
+
+.product-links a:first-child:hover::before,
+.product-links a:first-child:focus-visible::before {
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.product-links a:not(:first-child),
+.product-links a:not(:first-child):hover,
+.product-links a:not(:first-child):focus-visible {
+  min-height: 42px;
+  padding: 0 4px;
+  border: 0;
+  border-bottom: 1px dashed var(--signal);
+  background: transparent;
+  color: var(--secondary);
+  box-shadow: none;
+}
+
+.product-links a:not(:first-child):hover,
+.product-links a:not(:first-child):focus-visible {
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
+.product-links a span {
+  color: var(--signal);
+}
+
+.product-links a:first-child:hover span,
+.product-links a:first-child:focus-visible span {
+  color: currentColor;
+}
+
+@media (max-width: 520px) {
+  .product-links {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-links a:first-child {
+    width: min(100%, 240px);
+  }
+
+  .product-links a:not(:first-child) {
+    width: fit-content;
+  }
+}
+
+/* Closing action is one coherent proof gate, not a detached icon and label. */
+.closing-links .closing-gate,
+.closing-links .closing-gate:hover,
+.closing-links .closing-gate:focus-visible {
+  position: relative;
+  width: 218px;
+  min-height: 50px;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0;
+  padding: 0 22px 0 42px;
+  clip-path: polygon(10px 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 10px 100%, 0 50%);
+  background: var(--inverse-bg);
+  color: var(--inverse-fg);
+  font: 500 9px/1 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.closing-links .closing-gate::before {
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  content: "";
+  background: var(--signal);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 18%, transparent);
+  transform: translateY(-50%);
+}
+
+.closing-links .closing-gate .circle-arrow,
+.closing-links .closing-gate:hover .circle-arrow,
+.closing-links .closing-gate:focus-visible .circle-arrow {
+  order: 2;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  color: var(--signal);
+  font-size: 14px;
+  transform: none;
+}
+
+.closing-links .closing-gate:hover,
+.closing-links .closing-gate:focus-visible {
+  background: var(--signal);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.closing-links .closing-gate:hover::before,
+.closing-links .closing-gate:focus-visible::before {
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.closing-links .closing-gate:hover .circle-arrow,
+.closing-links .closing-gate:focus-visible .circle-arrow {
+  color: currentColor;
+}
+
+@media (max-width: 520px) {
+  .closing-links .closing-gate {
+    width: min(100%, 240px);
+  }
+}
