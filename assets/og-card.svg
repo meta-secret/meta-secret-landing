@@ -1,16 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#070908"/>
-  <g opacity=".13" stroke="#f2f0e8">
-    <path d="M0 105h1200M0 210h1200M0 315h1200M0 420h1200M0 525h1200"/>
-    <path d="M100 0v630M200 0v630M300 0v630M400 0v630M500 0v630M600 0v630M700 0v630M800 0v630M900 0v630M1000 0v630M1100 0v630"/>
+  <rect width="1200" height="630" fill="#f3f2ee"/>
+  <path d="M0 76h1200M735 76v554" fill="none" stroke="#c9c8c2"/>
+  <g transform="translate(48 25)" fill="#0b0b0b">
+    <path d="M0 0h27v38H0zM35 0h27v15H35zM35 22h11v16H35z"/>
+    <circle cx="56" cy="31" r="7"/>
   </g>
-  <g transform="translate(88 78)" fill="none" stroke="#c7ff35" stroke-width="5">
-    <path d="M0 28A28 28 0 0 1 54 18M56 28A28 28 0 0 1 2 38"/>
-    <circle cx="2" cy="38" r="5" fill="#c7ff35"/>
-    <circle cx="54" cy="18" r="5" fill="#c7ff35"/>
+  <text x="130" y="52" fill="#0b0b0b" font-family="monospace" font-size="17" letter-spacing="8">META SECRET</text>
+  <text x="48" y="255" fill="#0b0b0b" font-family="Arial Narrow, Arial, sans-serif" font-size="118" font-weight="700" letter-spacing="-6">PRIVACY HAS</text>
+  <text x="48" y="362" fill="#0b0b0b" font-family="Arial Narrow, Arial, sans-serif" font-size="118" font-weight="700" letter-spacing="-6">NO MASTER KEY.</text>
+  <text x="53" y="420" fill="#0b0b0b" font-family="monospace" font-size="18">Open tools for secrets that remain yours.</text>
+  <text x="53" y="564" fill="#0b0b0b" font-family="monospace" font-size="12" letter-spacing="2">OPEN SOURCE · DEVICE CONTROLLED · NO CENTRAL TRUST</text>
+  <g transform="translate(775 122)" fill="none" stroke="#0b0b0b">
+    <path d="M0 330V20M0 330h360"/>
+    <g opacity=".25">
+      <path d="M60 20v310M120 20v310M180 20v310M240 20v310M300 20v310"/>
+      <path d="M0 80h360M0 140h360M0 200h360M0 260h360"/>
+    </g>
+    <path d="M15 286C76 215 129 259 177 213S267 78 345 102" stroke-width="3"/>
+    <g fill="#244cff" stroke="#244cff">
+      <circle cx="55" cy="251" r="8"/><circle cx="140" cy="239" r="8"/><circle cx="224" cy="150" r="8"/><circle cx="313" cy="94" r="8"/>
+    </g>
+    <g font-family="monospace" font-size="15" text-anchor="middle">
+      <path d="m36 370 20-13 20 13-5 27H41z" fill="#0b0b0b"/><text x="56" y="385" fill="#fff" stroke="none">S1</text>
+      <path d="m126 370 20-13 20 13-5 27h-30z"/><text x="146" y="385" fill="#0b0b0b" stroke="none">S2</text>
+      <path d="m216 370 20-13 20 13-5 27h-30z" fill="#0b0b0b"/><text x="236" y="385" fill="#fff" stroke="none">S3</text>
+      <path d="m306 370 20-13 20 13-5 27h-30z" fill="#0b0b0b"/><text x="326" y="385" fill="#fff" stroke="none">S5</text>
+    </g>
   </g>
-  <text x="170" y="116" fill="#f2f0e8" font-family="monospace" font-size="27" letter-spacing="3">META//SECRET</text>
-  <text x="82" y="350" fill="#f2f0e8" font-family="Arial, sans-serif" font-size="94" font-weight="600" letter-spacing="-6">Your secrets.</text>
-  <text x="82" y="450" fill="#c7ff35" font-family="Arial, sans-serif" font-size="94" font-weight="600" letter-spacing="-6">Your keys.</text>
-  <text x="85" y="545" fill="#f2f0e8" opacity=".55" font-family="monospace" font-size="19" letter-spacing="2">OPEN-SOURCE · DEVICE-CONTROLLED · DECENTRALIZED</text>
+  <circle cx="1150" cy="38" r="5" fill="#ff4f1f"/>
 </svg>
