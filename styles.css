@@ -2181,3 +2181,578 @@ html[data-theme="dark"] .crypto-plate-art {
     grid-row: 4;
   }
 }
+
+/* Lower-page actions preserve the same primary/secondary hierarchy. */
+.product-links a:first-child {
+  min-height: 52px;
+  padding: 0 20px;
+  border: 1px solid var(--cobalt);
+  background: var(--cobalt);
+  color: white;
+}
+
+.product-links a:first-child:hover,
+.product-links a:first-child:focus-visible {
+  border-color: var(--ultramarine);
+  background: var(--ultramarine);
+}
+
+.product-links a:not(:first-child) {
+  color: var(--secondary);
+}
+
+.vault-links a {
+  transition: background 180ms ease, padding 180ms ease;
+}
+
+.vault-links a:hover,
+.vault-links a:focus-visible {
+  padding-inline: 14px;
+  background: color-mix(in srgb, var(--cobalt) 7%, transparent);
+}
+
+/* Primary direct-launch deck: the two product routes dominate the first screen. */
+.hero {
+  grid-template-areas:
+    "copy stage"
+    "actions actions";
+  grid-template-rows: minmax(400px, calc(100svh - 78px - 230px)) auto;
+  row-gap: 0;
+}
+
+.hero-copy {
+  grid-area: copy;
+}
+
+.crypto-stage {
+  grid-area: stage;
+}
+
+.hero-copy,
+.crypto-stage {
+  min-height: 0;
+}
+
+.hero-actions {
+  grid-area: actions;
+  display: grid;
+  gap: 16px;
+  padding: 22px 3vw 20px;
+  border-top: 1px solid var(--line);
+}
+
+.launch-deck {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.launch-gate {
+  position: relative;
+  min-width: 0;
+  min-height: 144px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 78px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--cobalt) 7%, transparent);
+  color: var(--ink);
+  text-align: left;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.launch-gate::before,
+.launch-gate::after {
+  position: absolute;
+  left: 22px;
+  width: 46px;
+  height: 1px;
+  content: "";
+  background: var(--cobalt);
+}
+
+.launch-gate::before { top: 18px; }
+.launch-gate::after { bottom: 18px; }
+
+.gate-copy {
+  min-width: 0;
+  display: grid;
+  align-content: center;
+  gap: 13px;
+  padding: 28px 24px;
+}
+
+.system-tag,
+.endpoint,
+.proof-line,
+.compare-link {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.system-tag,
+.endpoint,
+.proof-line {
+  color: var(--muted);
+}
+
+.gate-title {
+  overflow: hidden;
+  font: 400 clamp(28px, 3.2vw, 50px)/1 var(--sans);
+  letter-spacing: -0.055em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.endpoint::before {
+  content: "● ";
+  color: var(--cobalt);
+}
+
+.gate-action {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: var(--cobalt);
+  color: white;
+  font: 500 22px/1 var(--mono);
+  transition: background 180ms ease;
+}
+
+.gate-action::before,
+.gate-action::after {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  content: "";
+}
+
+.gate-action::before { top: 15px; }
+.gate-action::after { bottom: 15px; }
+
+.launch-gate:hover,
+.launch-gate:focus-visible {
+  border-color: var(--cobalt);
+  background: color-mix(in srgb, var(--cobalt) 13%, transparent);
+  transform: translateY(-2px);
+}
+
+.launch-gate:hover .gate-action,
+.launch-gate:focus-visible .gate-action {
+  background: var(--ultramarine);
+}
+
+.launch-gate:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.deck-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.proof-line b {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+/* Weighted project launch gates: Proof Rail 1, Key Shard 1, ZK Gate 2. */
+.crypto-cta {
+  position: relative;
+  min-width: 0;
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 0 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper-bright) 58%, transparent);
+  color: var(--ink);
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.crypto-cta .cta-copy {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  color: inherit;
+  font-family: var(--mono);
+  writing-mode: horizontal-tb;
+}
+
+.crypto-cta .cta-copy small {
+  overflow: hidden;
+  color: var(--muted);
+  font: 400 8px/1 var(--mono);
+  letter-spacing: 0.1em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.crypto-cta .cta-copy strong {
+  overflow: hidden;
+  color: inherit;
+  font: 500 clamp(12px, 1vw, 15px)/1 var(--mono);
+  letter-spacing: 0.09em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.crypto-cta .cta-arrow {
+  color: inherit;
+  font: 500 17px/1 var(--mono);
+  text-align: center;
+  writing-mode: horizontal-tb;
+}
+
+.crypto-cta .cta-proof {
+  position: relative;
+  width: 58px;
+  height: 52px;
+  color: inherit;
+  writing-mode: horizontal-tb;
+}
+
+.crypto-cta:hover,
+.crypto-cta:focus-visible {
+  transform: translateY(-2px);
+}
+
+.crypto-cta:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
+.compare-link {
+  width: fit-content;
+  margin-top: 4px;
+  color: var(--secondary);
+  font: 500 9px/1 var(--mono);
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.compare-link:hover,
+.compare-link:focus-visible {
+  color: var(--cobalt);
+}
+
+/* 01 / Proof Rail */
+html[data-cta-variant="proof"] .crypto-cta {
+  grid-template-columns: minmax(0, 1fr) 58px;
+  gap: 0;
+  padding: 0;
+  border-left: 3px solid var(--cobalt);
+  background: color-mix(in srgb, var(--cobalt) 7%, transparent);
+}
+
+html[data-cta-variant="proof"] .crypto-cta::before,
+html[data-cta-variant="proof"] .crypto-cta::after {
+  position: absolute;
+  right: 72px;
+  width: 48px;
+  height: 1px;
+  content: "";
+  background: var(--line);
+}
+
+html[data-cta-variant="proof"] .crypto-cta::before { top: 14px; }
+html[data-cta-variant="proof"] .crypto-cta::after { bottom: 14px; }
+
+html[data-cta-variant="proof"] .crypto-cta .cta-proof {
+  display: none;
+}
+
+html[data-cta-variant="proof"] .crypto-cta .cta-copy {
+  padding: 16px 20px;
+}
+
+html[data-cta-variant="proof"] .crypto-cta .cta-arrow {
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+html[data-cta-variant="proof"] .crypto-cta:hover,
+html[data-cta-variant="proof"] .crypto-cta:focus-visible {
+  border-color: var(--cobalt);
+  background: color-mix(in srgb, var(--cobalt) 13%, transparent);
+}
+
+html[data-cta-variant="proof"] .crypto-cta:hover .cta-arrow,
+html[data-cta-variant="proof"] .crypto-cta:focus-visible .cta-arrow {
+  background: var(--cobalt);
+  color: white;
+}
+
+/* 02 / Key Shard */
+html[data-cta-variant="shard"] .crypto-cta {
+  border: 0;
+  clip-path: polygon(12px 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 12px 100%, 0 50%);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+html[data-cta-variant="shard"] .crypto-cta .cta-proof {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(50% 0, 100% 34%, 84% 100%, 16% 100%, 0 34%);
+  background: var(--cobalt);
+  color: white;
+}
+
+html[data-cta-variant="shard"] .crypto-cta .cta-proof::before {
+  content: "KEY";
+  font: 500 8px/1 var(--mono);
+  letter-spacing: 0.08em;
+}
+
+html[data-cta-variant="shard"] .crypto-cta[data-product="id0"] .cta-proof::before {
+  content: "3 / 5";
+}
+
+html[data-cta-variant="shard"] .crypto-cta .cta-copy small {
+  color: color-mix(in srgb, var(--paper) 62%, transparent);
+}
+
+html[data-cta-variant="shard"] .crypto-cta:hover .cta-proof,
+html[data-cta-variant="shard"] .crypto-cta:focus-visible .cta-proof {
+  transform: rotate(7deg);
+}
+
+/* 03 / ZK Gate */
+html[data-cta-variant="zk"] .crypto-cta {
+  background: transparent;
+}
+
+html[data-cta-variant="zk"] .crypto-cta::after {
+  position: absolute;
+  right: 48px;
+  bottom: 13px;
+  left: 82px;
+  height: 1px;
+  content: "";
+  background: repeating-linear-gradient(90deg, var(--cobalt) 0 6px, transparent 6px 12px);
+}
+
+html[data-cta-variant="zk"] .crypto-cta .cta-proof::before,
+html[data-cta-variant="zk"] .crypto-cta .cta-proof::after {
+  position: absolute;
+  top: 17px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  content: "";
+}
+
+html[data-cta-variant="zk"] .crypto-cta .cta-proof::before { left: 5px; }
+
+html[data-cta-variant="zk"] .crypto-cta .cta-proof::after {
+  right: 4px;
+  border-color: var(--cobalt);
+  background: var(--cobalt);
+}
+
+html[data-cta-variant="zk"] .crypto-cta .cta-proof > span {
+  position: absolute;
+  top: 25px;
+  right: 18px;
+  left: 22px;
+  border-top: 1px dashed var(--muted);
+}
+
+html[data-cta-variant="zk"] .crypto-cta .cta-copy small::before {
+  content: "● ";
+  color: var(--cobalt);
+}
+
+html[data-cta-variant="zk"] .crypto-cta:hover,
+html[data-cta-variant="zk"] .crypto-cta:focus-visible {
+  border-color: var(--cobalt);
+  background: color-mix(in srgb, var(--cobalt) 8%, transparent);
+}
+
+.module-link.crypto-cta {
+  width: clamp(280px, 20vw, 320px);
+  min-width: 280px;
+  min-height: 82px;
+  height: auto;
+  align-self: start;
+  display: grid;
+  padding: 0 16px 0 10px;
+  border-radius: 0;
+  box-shadow: none;
+  font: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+html[data-cta-variant="proof"] .module-link.crypto-cta {
+  padding: 0;
+}
+
+.project-module:hover .module-link.crypto-cta {
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--paper-bright) 58%, transparent);
+  color: var(--ink);
+  transform: none;
+}
+
+html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta {
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+html[data-cta-variant="proof"] .project-module:hover .module-link.crypto-cta {
+  border-color: var(--line);
+  border-left-color: var(--cobalt);
+  background: color-mix(in srgb, var(--cobalt) 7%, transparent);
+}
+
+html[data-cta-variant="zk"] .project-module:hover .module-link.crypto-cta:hover,
+html[data-cta-variant="zk"] .project-module:hover .module-link.crypto-cta:focus-visible {
+  border-color: var(--cobalt);
+  background: color-mix(in srgb, var(--cobalt) 8%, transparent);
+  transform: translateY(-2px);
+}
+
+html[data-cta-variant="proof"] .project-module:hover .module-link.crypto-cta:hover,
+html[data-cta-variant="proof"] .project-module:hover .module-link.crypto-cta:focus-visible {
+  border-color: var(--cobalt);
+  background: color-mix(in srgb, var(--cobalt) 13%, transparent);
+  transform: translateY(-2px);
+}
+
+html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:hover,
+html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:focus-visible {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1180px) and (min-width: 1001px) {
+  .module-body {
+    grid-template-columns: 52px minmax(0, 1fr);
+  }
+
+  .module-link.crypto-cta {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    margin: 2px 0 28px;
+  }
+
+  .module-specs {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .protocol-trace {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-areas:
+      "copy"
+      "actions"
+      "stage";
+    grid-template-rows: auto auto auto;
+  }
+
+  .hero-copy {
+    min-height: 520px;
+  }
+
+  .crypto-stage {
+    min-height: min(76vw, 650px);
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-copy {
+    min-height: 0;
+  }
+
+  .hero-actions {
+    padding: 22px 20px 24px;
+  }
+
+  .crypto-cta {
+    min-height: 78px;
+  }
+
+  .module-body {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .module-link.crypto-cta {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    min-width: 0;
+    margin: 8px 0 28px;
+  }
+
+  .module-specs {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .protocol-trace {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+
+@media (max-width: 620px) {
+  .launch-deck {
+    grid-template-columns: 1fr;
+  }
+
+  .launch-gate {
+    min-height: 132px;
+  }
+
+  .deck-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-copy {
+    min-height: 0;
+  }
+
+  .module-link.crypto-cta {
+    width: 100%;
+    min-width: 0;
+    min-height: 82px;
+    height: auto;
+    margin: 8px 0 28px;
+  }
+}

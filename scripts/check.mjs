@@ -8,7 +8,12 @@ const requiredText = [
   'Privacy has',
   'no master key.',
   'Tools for secrets that remain yours—even when platforms disappear.',
+  'Launch ID0',
+  'Open Nook',
+  'one click to product',
   'Secrets belong to people,',
+  'We remove single',
+  'points of authority.',
   'Keys, not accounts',
   'Open ID0.app',
   'https://id0.app',
@@ -24,6 +29,10 @@ const requiredText = [
 
 for (const text of requiredText) {
   if (!html.includes(text)) throw new Error(`Required content is missing: ${text}`);
+}
+
+if (!readFileSync('script.js', 'utf8').includes("const ctaVariants = ['proof', 'shard', 'zk', 'zk'];")) {
+  throw new Error('Project CTA weighting must remain Proof Rail 1, Key Shard 1, ZK Gate 2.');
 }
 
 for (const asset of ['styles.css', 'script.js', 'assets/crypto-plate.svg', 'assets/favicon.svg', 'assets/og-card.svg', '404.html', 'robots.txt', 'sitemap.xml']) {

@@ -7,6 +7,30 @@ const themeLabel = document.querySelector('[data-theme-label]');
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
 
+const ctaVariants = ['proof', 'shard', 'zk', 'zk'];
+const ctaStatus = {
+  proof: { id0: 'verified / 7a2f:4d6c', nook: 'local key / active' },
+  shard: { id0: 'threshold ready', nook: 'device held' },
+  zk: { id0: 'proof accepted', nook: 'identity local' },
+};
+
+const randomVariantIndex = () => {
+  if (globalThis.crypto?.getRandomValues) {
+    const value = new Uint32Array(1);
+    globalThis.crypto.getRandomValues(value);
+    return value[0] % ctaVariants.length;
+  }
+  return Math.floor(Math.random() * ctaVariants.length);
+};
+
+const ctaVariant = ctaVariants[randomVariantIndex()];
+document.documentElement.dataset.ctaVariant = ctaVariant;
+document.querySelectorAll('.crypto-cta[data-product]').forEach((link) => {
+  const product = link.dataset.product;
+  const status = link.querySelector('[data-cta-status]');
+  if (status && (product === 'id0' || product === 'nook')) status.textContent = ctaStatus[ctaVariant][product];
+});
+
 const storedTheme = () => {
   try {
     const value = localStorage.getItem('meta-secret-theme');
