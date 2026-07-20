@@ -1858,6 +1858,8 @@ html[data-theme="dark"] .theme-glyph::after {
 .hero-copy {
   justify-content: flex-start;
   padding: 96px 0 26px;
+  container-type: inline-size;
+  container-name: hero-copy;
 }
 
 .micro-label {
@@ -3416,19 +3418,21 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
   }
 }
 
-/* The changing trust model stays in a fixed slot, so neither phrase moves the
-   hero or the cryptographic plate when it retypes. */
+/* Size the rotating phrase from the copy column (cqi), not the viewport —
+   otherwise "master password" + caret overflows the narrower hero track. */
 .hero h1 .privacy-slot {
   position: relative;
-  height: clamp(58px, 6vw, 92px);
-  overflow: hidden;
+  height: clamp(48px, 5.2vw, 84px);
+  height: clamp(48px, 12cqi, 84px);
+  overflow: visible;
 }
 
 .hero h1 .privacy-term {
   position: absolute;
   inset: 0 auto auto 0;
-  font-size: clamp(42px, 4.2vw, 76px);
-  letter-spacing: -0.05em;
+  font-size: clamp(34px, 3.4vw, 68px);
+  font-size: clamp(34px, 9.4cqi, 68px);
+  letter-spacing: -0.06em;
   line-height: 1.08;
   white-space: nowrap;
 }
@@ -3438,7 +3442,7 @@ html[data-cta-variant="shard"] .project-module:hover .module-link.crypto-cta:foc
   display: inline-block;
   width: 0.07em;
   height: 0.82em;
-  margin-left: 0.08em;
+  margin-left: 0.06em;
   background: currentColor;
   vertical-align: -0.04em;
   animation: privacy-caret 1.05s steps(1, end) infinite;
