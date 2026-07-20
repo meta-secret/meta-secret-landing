@@ -52,8 +52,12 @@ if (html.includes('fonts.googleapis.com') || html.includes('fonts.gstatic.com'))
   throw new Error('The page must not depend on third-party font delivery.');
 }
 
-if (!html.includes('name="color-scheme" content="light only"')) {
-  throw new Error('The light-only color scheme guard is missing.');
+if (!html.includes('name="color-scheme" content="light dark"') || !notFoundHtml.includes('name="color-scheme" content="light dark"')) {
+  throw new Error('Light and dark color-scheme support is missing.');
+}
+
+if (!html.includes('class="theme-toggle"') || !html.includes('meta-secret-theme')) {
+  throw new Error('The persisted color-theme control is missing.');
 }
 
 for (const forbiddenColor of ['#c7ff35', '#8df1c5', 'chartreuse', 'lime']) {
