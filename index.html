@@ -13,6 +13,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only" />
     <meta name="theme-color" content="#f3f2ee" />
     <meta
       name="description"
@@ -29,12 +30,6 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://meta-secret.org/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
     <title>Meta Secret — Privacy has no master key.</title>
   </head>
@@ -81,8 +76,7 @@
             <span>t = 3 / n = 5</span><span>GF(p)</span><span>256 bit</span>
           </div>
 
-          <svg class="crypto-diagram" viewBox="0 0 820 560" role="img" aria-labelledby="crypto-title crypto-desc">
-            <title id="crypto-title">A threshold secret reconstructed from three of five shards</title>
+          <svg class="crypto-diagram" viewBox="0 0 820 560" role="img" aria-label="A threshold secret reconstructed from three of five shards" aria-describedby="crypto-desc">
             <desc id="crypto-desc">
               Five independent shards sit on a finite-field curve. Three selected shards form a proof path and reconstruct
               the secret without any single participant holding the complete key.
@@ -204,31 +198,81 @@
       </section>
 
       <nav class="index-bar" aria-label="Project index">
-        <a href="#work">Index</a>
+        <a class="registry-label" href="#work"><i></i>System registry</a>
         <a href="#id0">01 / ID0</a>
         <a href="#nook">02 / Nook</a>
-        <span class="scroll-label">Scroll <i>↓</i></span>
+        <span class="scroll-label"><b>2 endpoints</b><i>●</i> Online</span>
       </nav>
 
       <section id="work" class="work-section">
-        <article id="id0" class="project-row reveal">
-          <p class="project-type">01 / Distributed</p>
-          <div class="project-name"><span>01</span><i>/</i><h2>ID0</h2></div>
-          <div class="project-summary">
-            <p>Distributed vault infrastructure</p>
-            <span>Threshold cryptography distributes trust across people and devices.</span>
+        <article id="id0" class="project-module reveal">
+          <header class="module-header">
+            <span>MS-PROTOCOL / 01</span>
+            <span>TRUST MODEL: DISTRIBUTED</span>
+            <span class="module-status"><i></i>LIVE / ID0.APP</span>
+          </header>
+          <div class="module-body">
+            <div class="module-index" aria-hidden="true">01</div>
+            <div class="module-title">
+              <p>Advanced system</p>
+              <h2>ID0</h2>
+              <span>Distributed vault infrastructure</span>
+            </div>
+            <dl class="module-specs">
+              <div><dt>Primitive</dt><dd>Threshold split</dd></div>
+              <div><dt>Quorum</dt><dd>t / n configurable</dd></div>
+              <div><dt>Authority</dt><dd>Multi-participant</dd></div>
+            </dl>
+            <div class="protocol-trace protocol-trace-id0" aria-hidden="true">
+              <svg viewBox="0 0 290 105">
+                <g class="trace-nodes">
+                  <circle cx="18" cy="18" r="6"/><circle cx="80" cy="18" r="6"/><circle cx="142" cy="18" r="6"/><circle cx="204" cy="18" r="6"/><circle cx="266" cy="18" r="6"/>
+                </g>
+                <g class="trace-lines">
+                  <path d="M18 26v26h124M80 26v20h62M142 26v26M204 26v20h-62M266 26v26H142"/>
+                  <path class="trace-dash" d="M142 52v23"/>
+                </g>
+                <rect class="trace-core" x="114" y="76" width="56" height="22"/>
+                <text x="142" y="91">3 / 5</text>
+                <text class="trace-label" x="18" y="9">S1</text><text class="trace-label" x="80" y="9">S2</text><text class="trace-label" x="142" y="9">S3</text><text class="trace-label" x="204" y="9">S4</text><text class="trace-label" x="266" y="9">S5</text>
+              </svg>
+              <p>RECONSTRUCTION PATH <span>7A2F·4D6C</span></p>
+            </div>
+            <a class="module-link" href="https://id0.app" target="_blank" rel="noreferrer" aria-label="Open ID0"><span>Launch</span>↗</a>
           </div>
-          <a class="row-link" href="https://id0.app" target="_blank" rel="noreferrer" aria-label="Open ID0">↗</a>
         </article>
 
-        <article id="nook" class="project-row project-row-nook reveal">
-          <p class="project-type">02 / Local-first</p>
-          <div class="project-name"><span>02</span><i>/</i><h2>Nook</h2></div>
-          <div class="project-summary">
-            <p>Keys, not accounts</p>
-            <span>Lightweight, device-controlled vaults for everyday and high-value secrets.</span>
+        <article id="nook" class="project-module project-module-nook reveal">
+          <header class="module-header">
+            <span>MS-PROTOCOL / 02</span>
+            <span>TRUST MODEL: LOCAL-FIRST</span>
+            <span class="module-status"><i></i>LIVE / NOKEY.SH</span>
+          </header>
+          <div class="module-body">
+            <div class="module-index" aria-hidden="true">02</div>
+            <div class="module-title">
+              <p>Lightweight system</p>
+              <h2>Nook</h2>
+              <span>Keys, not accounts</span>
+            </div>
+            <dl class="module-specs">
+              <div><dt>Primitive</dt><dd>Client encryption</dd></div>
+              <div><dt>Identity</dt><dd>Device-held keys</dd></div>
+              <div><dt>Storage</dt><dd>Ciphertext only</dd></div>
+            </dl>
+            <div class="protocol-trace protocol-trace-nook" aria-hidden="true">
+              <svg viewBox="0 0 290 105">
+                <g class="device-node"><rect x="5" y="29" width="44" height="55" rx="3"/><circle cx="27" cy="74" r="2"/></g>
+                <path class="trace-flow" d="M55 56h48"/>
+                <g class="cipher-block"><path d="m108 29 35-12 35 12v55l-35 12-35-12z"/><text x="143" y="59">ENC</text><text x="143" y="72">LOCAL</text></g>
+                <path class="trace-flow trace-dash" d="M183 56h48"/>
+                <g class="storage-node"><path d="M236 35c0-7 11-13 24-13s24 6 24 13v43c0 7-11 13-24 13s-24-6-24-13z"/><path d="M236 35c0 7 11 13 24 13s24-6 24-13M236 56c0 7 11 13 24 13s24-6 24-13"/></g>
+                <text class="trace-label" x="27" y="20">DEVICE</text><text class="trace-label" x="260" y="13">CIPHERTEXT</text>
+              </svg>
+              <p>KEY BOUNDARY <span>NEVER CROSSED</span></p>
+            </div>
+            <a class="module-link" href="https://nokey.sh" target="_blank" rel="noreferrer" aria-label="Open Nook"><span>Launch</span>↗</a>
           </div>
-          <a class="row-link" href="https://nokey.sh" target="_blank" rel="noreferrer" aria-label="Open Nook">↗</a>
         </article>
       </section>
 

@@ -1,4 +1,45 @@
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/fonts/barlow-condensed-500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/fonts/barlow-condensed-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("assets/fonts/ibm-plex-mono-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("assets/fonts/ibm-plex-mono-500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+
 :root {
+  color-scheme: only light;
   --paper: #f3f2ee;
   --paper-bright: #faf9f5;
   --ink: #0b0b0b;
@@ -18,6 +59,7 @@
 }
 
 html {
+  color-scheme: only light;
   scroll-behavior: smooth;
   background: var(--paper);
   overflow-x: hidden;
@@ -36,7 +78,7 @@ body {
 main,
 .hero,
 .hero-copy,
-.project-row,
+.project-module,
 .product-detail {
   min-width: 0;
 }
@@ -188,7 +230,6 @@ a {
 
 .micro-label,
 .section-tag,
-.project-type,
 .product-title > p,
 .manifesto-heading > p,
 .principles-heading > p,
@@ -465,7 +506,7 @@ a {
   z-index: 10;
   height: 40px;
   display: grid;
-  grid-template-columns: 130px 180px 1fr auto;
+  grid-template-columns: 220px 150px 1fr auto;
   align-items: center;
   border-bottom: 1px solid var(--line);
   font: 400 9px/1 var(--mono);
@@ -486,6 +527,18 @@ a {
   border-bottom: 2px solid var(--cobalt);
 }
 
+.registry-label {
+  gap: 9px;
+}
+
+.registry-label i {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--cobalt);
+  background: var(--cobalt);
+  box-shadow: 0 0 0 3px rgba(36, 76, 255, 0.12);
+}
+
 .scroll-label {
   gap: 12px;
 }
@@ -493,84 +546,257 @@ a {
 .scroll-label i {
   color: var(--cobalt);
   font-style: normal;
+  font-size: 7px;
 }
 
-.project-row {
-  min-height: 112px;
-  display: grid;
-  grid-template-columns: 22% 31% 1fr 74px;
-  align-items: center;
-  padding: 0 2.4vw;
-  border-bottom: 1px solid var(--line);
-}
-
-.project-type {
-  margin: 0;
-  font-size: 8px;
-}
-
-.project-name {
-  display: flex;
-  align-items: center;
-  gap: clamp(15px, 2vw, 38px);
-}
-
-.project-name span,
-.project-name i,
-.project-name h2 {
-  font-family: var(--display);
-  font-size: clamp(42px, 4vw, 72px);
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.project-name h2 {
-  margin: 0;
-}
-
-.project-name i {
-  font-size: clamp(30px, 3vw, 52px);
+.scroll-label b {
+  color: var(--muted);
   font-weight: 400;
 }
 
-.project-summary {
-  padding-left: clamp(24px, 4vw, 70px);
+.work-section {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(11, 11, 11, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 11, 11, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.project-module {
+  position: relative;
+  min-height: 260px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(243, 242, 238, 0.86);
+  transition: background 220ms ease;
+}
+
+.project-module:hover {
+  background: rgba(250, 249, 245, 0.96);
+}
+
+.module-header {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4vw;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font: 400 7px/1 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.module-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.module-status i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cobalt);
+  box-shadow: 0 0 0 3px rgba(36, 76, 255, 0.1);
+}
+
+.module-body {
+  min-height: 225px;
+  display: grid;
+  grid-template-columns: 8% 21% 25% minmax(250px, 1fr) 70px;
+  align-items: stretch;
+  padding: 0 2.4vw;
+}
+
+.module-index {
+  align-self: center;
+  color: var(--cobalt);
+  font: 500 clamp(38px, 4vw, 66px)/1 var(--display);
+  letter-spacing: -0.04em;
+}
+
+.module-title,
+.module-specs,
+.protocol-trace,
+.module-link {
   border-left: 1px solid var(--line);
 }
 
-.project-summary p {
+.module-title {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px clamp(18px, 2vw, 38px);
+}
+
+.module-title p {
+  margin: 0 0 8px;
+  color: var(--cobalt);
+  font: 400 7px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.module-title h2 {
   margin: 0;
-  font: 400 clamp(13px, 1.2vw, 18px)/1.4 var(--mono);
+  font: 500 clamp(50px, 5vw, 82px)/0.82 var(--display);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
-.project-summary span {
-  display: block;
-  max-width: 550px;
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 11px;
+.module-title > span {
+  margin: 0;
+  color: #4d4d49;
+  font: 400 10px/1.45 var(--mono);
 }
 
-.row-link {
-  width: 44px;
-  height: 44px;
+.module-title h2 + span {
+  margin-top: 15px;
+}
+
+.module-specs {
+  margin: 0;
+  padding: 20px clamp(18px, 2vw, 38px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.module-specs div {
   display: grid;
-  place-items: center;
-  justify-self: end;
-  border: 1px solid var(--ink);
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  grid-template-columns: 75px 1fr;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px dotted #aaa9a4;
+  font: 400 8px/1.35 var(--mono);
+  text-transform: uppercase;
 }
 
-.project-row:hover .row-link,
-.row-link:focus-visible {
-  transform: rotate(45deg);
+.module-specs div:last-child {
+  border-bottom: 0;
+}
+
+.module-specs dt {
+  color: var(--muted);
+}
+
+.module-specs dd {
+  margin: 0;
+}
+
+.protocol-trace {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px clamp(18px, 2.4vw, 44px);
+}
+
+.protocol-trace svg {
+  width: 100%;
+  max-height: 118px;
+  overflow: visible;
+  color: var(--ink);
+  font-family: var(--mono);
+}
+
+.protocol-trace svg path,
+.protocol-trace svg circle,
+.protocol-trace svg rect {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.protocol-trace svg text {
+  fill: currentColor;
+  font-size: 8px;
+  text-anchor: middle;
+}
+
+.protocol-trace svg .trace-label {
+  fill: var(--muted);
+  font-size: 6px;
+}
+
+.protocol-trace svg .trace-nodes circle:nth-child(1),
+.protocol-trace svg .trace-nodes circle:nth-child(3),
+.protocol-trace svg .trace-nodes circle:nth-child(5),
+.protocol-trace svg .trace-core {
+  fill: var(--cobalt);
+  stroke: var(--cobalt);
+}
+
+.protocol-trace svg .trace-core + text {
+  fill: white;
+}
+
+.protocol-trace .trace-lines path,
+.protocol-trace .trace-flow {
+  stroke: #7e7e79;
+}
+
+.protocol-trace .trace-dash {
+  stroke: var(--cobalt);
+  stroke-dasharray: 4 3;
+}
+
+.protocol-trace .cipher-block path {
+  fill: var(--cobalt);
+  stroke: var(--cobalt);
+}
+
+.protocol-trace .cipher-block text {
+  fill: white;
+  font-size: 7px;
+}
+
+.protocol-trace > p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0 0;
+  padding-top: 7px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 400 6px/1 var(--mono);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.protocol-trace > p span {
+  color: var(--cobalt);
+}
+
+.module-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font: 400 20px/1 var(--mono);
+  text-decoration: none;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.module-link span {
+  writing-mode: vertical-rl;
+  color: var(--muted);
+  font-size: 6px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.project-module:hover .module-link,
+.module-link:focus-visible {
   background: var(--cobalt);
+  color: white;
+}
+
+.project-module:hover .module-link span,
+.module-link:focus-visible span {
   color: white;
 }
 
@@ -944,10 +1170,6 @@ a {
     width: 110%;
   }
 
-  .project-row {
-    grid-template-columns: 19% 35% 1fr 62px;
-  }
-
   .product-detail {
     grid-template-columns: 1.1fr 0.9fr;
   }
@@ -1056,23 +1278,27 @@ a {
     display: none;
   }
 
-  .project-row {
-    min-height: 155px;
-    grid-template-columns: 150px 1fr 55px;
-    gap: 18px;
-    padding: 22px 20px;
+  .module-body {
+    grid-template-columns: 10% 26% 29% minmax(160px, 1fr) 56px;
+    padding: 0 20px;
   }
 
-  .project-type {
-    display: none;
+  .module-header {
+    padding: 0 20px;
   }
 
-  .project-summary {
-    padding-left: 20px;
+  .module-title,
+  .module-specs,
+  .protocol-trace {
+    padding-inline: 18px;
   }
 
-  .project-summary span {
-    display: none;
+  .module-specs div {
+    grid-template-columns: 62px 1fr;
+  }
+
+  .module-title h2 {
+    font-size: 58px;
   }
 
   .manifesto,
@@ -1175,33 +1401,71 @@ a {
     padding: 0 10px;
   }
 
-  .project-row {
-    min-height: 210px;
-    grid-template-columns: 1fr 46px;
-    gap: 16px;
+  .registry-label {
+    font-size: 0;
   }
 
-  .project-name {
-    gap: 15px;
+  .project-module {
+    min-height: 0;
   }
 
-  .project-name span,
-  .project-name i,
-  .project-name h2 {
-    font-size: 44px;
+  .module-header span:nth-child(2) {
+    display: none;
   }
 
-  .project-summary {
+  .module-body {
+    min-height: 0;
+    grid-template-columns: 58px 1fr 46px;
+    padding: 0 20px;
+  }
+
+  .module-index {
     grid-column: 1;
+    grid-row: 1;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    font-size: 34px;
+  }
+
+  .module-title {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 145px;
+  }
+
+  .module-title h2 {
+    font-size: 56px;
+  }
+
+  .module-specs {
+    grid-column: 1 / 3;
     grid-row: 2;
-    padding: 14px 0 0;
     border-top: 1px solid var(--line);
     border-left: 0;
+    padding: 18px 0;
   }
 
-  .row-link {
-    grid-column: 2;
-    grid-row: 1 / span 2;
+  .module-specs div {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .protocol-trace {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    min-height: 165px;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+    padding: 15px 0 22px;
+  }
+
+  .protocol-trace svg {
+    max-height: 112px;
+  }
+
+  .module-link {
+    grid-column: 3;
+    grid-row: 1 / 4;
   }
 
   .panel {
