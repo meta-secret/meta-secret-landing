@@ -1798,7 +1798,7 @@ html[data-theme="dark"] .crypto-plate-art {
 
 .module-body {
   min-height: 0;
-  grid-template-columns: 58px minmax(0, 1fr) 44px;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
   padding: 18px 0 0;
 }
 
@@ -1856,15 +1856,49 @@ html[data-theme="dark"] .crypto-plate-art {
 .module-link {
   grid-column: 3;
   grid-row: 1;
-  width: 38px;
-  height: 38px;
+  width: auto;
+  min-width: clamp(142px, 13vw, 176px);
+  height: 52px;
   align-self: start;
-  border: 1px solid var(--line);
-  border-radius: 50%;
+  flex-direction: row;
+  gap: 18px;
+  padding: 0 22px;
+  border: 1px solid var(--cobalt);
+  border-radius: 999px;
+  background: var(--cobalt);
+  color: var(--accent-contrast);
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 26px rgba(36, 76, 255, 0.18);
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .module-link span {
-  display: none;
+  display: inline;
+  writing-mode: horizontal-tb;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.module-link b {
+  font: 500 16px/1 var(--mono);
+}
+
+.project-module:hover .module-link,
+.module-link:hover,
+.module-link:focus-visible {
+  border-color: var(--ultramarine);
+  background: var(--ultramarine);
+  color: var(--accent-contrast);
+  box-shadow: 0 12px 34px rgba(36, 76, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+.module-link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
 }
 
 .panel {
@@ -2106,5 +2140,34 @@ html[data-theme="dark"] .crypto-plate-art {
   .product-detail-nook {
     margin: 0 10px;
     border-radius: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .module-body {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .module-title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .module-link {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    height: 58px;
+    margin: 8px 0 28px;
+  }
+
+  .module-specs {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .protocol-trace {
+    grid-column: 1 / -1;
+    grid-row: 4;
   }
 }
